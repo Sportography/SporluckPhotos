@@ -196,3 +196,69 @@ nav {
     font-size: 1rem;
   }
 }
+/* Impact Section */
+.impact-section {
+  padding: 80px 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2d0000;
+}
+
+.impact-content {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.impact-text {
+  flex: 1;
+  color: white;
+}
+
+.impact-text h2 {
+  font-size: 1.1rem;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+
+.tagline {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.impact-headline {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.impact-photo {
+  flex: 1;
+  border-radius: 32px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.impact-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .impact-content {
+    flex-direction: column;
+  }
+
+  .impact-headline {
+    font-size: 2rem;
+  }
+
+  .tagline {
+    font-size: 1.3rem;
+  }
+}
