@@ -54,6 +54,36 @@ img {
   font-size: 1.5rem;
   font-weight: bold;
 }
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* Responsive Nav */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    z-index: 10000;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 30px;
+    flex-direction: column;
+    background-color: #800000;
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 10px;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+}
 
 /* Hero */
 .hero {
