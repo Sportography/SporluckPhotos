@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Name | Photography</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header class="fade-in">
+    <h1>Your Name Photography</h1>
+    <nav>
+      <a href="#gallery">Gallery</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="gallery" class="fade-in">
+    <h2>Featured Photos</h2>
+    <div class="photo-grid">
+      <img src="https://via.placeholder.com/300" alt="Sample photo 1">
+      <img src="https://via.placeholder.com/300" alt="Sample photo 2">
+      <img src="https://via.placeholder.com/300" alt="Sample photo 3">
+    </div>
+  </section>
+
+  <section id="services" class="fade-in">
+    <h2>What I Offer</h2>
+    <ul>
+      <li>Portrait Sessions</li>
+      <li>Event Photography</li>
+      <li>Concert & Sports Coverage</li>
+      <li>Editing and Retouching</li>
+    </ul>
+    <div class="buttons">
+      <a href="https://yourbookinglink.com" target="_blank" class="button">Book a Session</a>
+      <a href="https://instagram.com/yourusername" target="_blank" class="button">View Instagram</a>
+    </div>
+  </section>
+
+  <section id="about" class="fade-in">
+    <h2>About Me</h2>
+    <p>I'm a Texas-based photographer passionate about capturing real, vibrant moments in portraits, sports, concerts, and low-light settings.</p>
+  </section>
+
+  <footer id="contact" class="fade-in">
+    <h2>Contact Me</h2>
+    <p>Email: <a href="mailto:sporluckjm@outlook.com">sporluckjm@outlook.com</a></p>
+    <p>Phone: <a href="tel:2544492996">(254) 449-2996</a></p>
+  </footer>
+</body>
+</html>
