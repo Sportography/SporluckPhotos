@@ -38,14 +38,22 @@
 
 
   <!-- Gallery Section -->
-  <section class="gallery fade-in">
-    <div class="gallery-item"><img src="images/IMG_1466.jpg"><p>Your Friend.</p></div>
-    <div class="gallery-item"><img src="images/IMG_1222.jpg"><p>Your Moment.</p></div>
-    <div class="gallery-item"><img src="images/IMG_0622-Enhanced-NR.jpg"><p>Your Time.</p></div>
-    <div class="gallery-item"><img src="images/IMG_9344-Enhanced-NR.jpg"><p>Your Love.</p></div>
-    <div class="gallery-item"><img src="images/IMG_0809-Enhanced-NR.jpg"><p>Your Moment.</p></div>
+  <section class="gallery-container fade-in">
+  <div class="gallery-wrapper">
+    <button class="gallery-btn prev" onclick="moveSlide(-1)">❮</button>
+    
+    <div class="gallery-track" id="gallery-track">
+      <div class="gallery-item"><img src="images/IMG_1466.jpg" alt="Friend"><p>Your Friend.</p></div>
+      <div class="gallery-item"><img src="images/IMG_1222.jpg" alt="Moment"><p>Your Moment.</p></div>
+      <div class="gallery-item"><img src="images/IMG_0622-Enhanced-NR.jpg" alt="Time"><p>Your Time.</p></div>
+      <div class="gallery-item"><img src="images/IMG_9344-Enhanced-NR.jpg" alt="Love"><p>Your Love.</p></div>
+      <div class="gallery-item"><img src="images/IMG_0809-Enhanced-NR.jpg" alt="Extra"><p>Your Moment.</p></div>
+    </div>
+    
+    <button class="gallery-btn next" onclick="moveSlide(1)">❯</button>
+  </div>
+</section>
 
-  </section>
 
   <!-- Services Section -->
   <section class="services fade-in" id="services">
