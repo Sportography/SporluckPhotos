@@ -213,19 +213,39 @@ img {
 .about-contact {
   background: #3b0000;
   padding: 60px 20px;
-}
-
-.about {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
 }
 
+.about {
+  max-width: 700px;
+  margin-bottom: 40px;
+}
+
 .about img {
   width: 150px;
   border-radius: 15px;
   margin-bottom: 15px;
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-top: 30px;
+  font-size: 1.1rem;
+}
+
+.contact-links a {
+  color: #ffb6c1;
+  text-decoration: none;
+}
+
+.contact-links a:hover {
+  text-decoration: underline;
 }
 
 /* Contact Form */
@@ -299,40 +319,49 @@ button:hover {
 }
 
 /* Rates Section */
-.rates-cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-  margin-top: 30px;
+.rates-section {
+  background-color: #3b0000;
+  padding: 60px 20px;
+  text-align: center;
 }
 
-.rate-card {
+.rates-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+.rates-section .rate-card {
+  max-width: 350px;
+  margin: 0 auto 30px;
   background: #4a0000;
-  border: 2px solid #ffb6c1;
   border-radius: 12px;
-  padding: 20px 30px;
-  max-width: 300px;
+  padding: 20px;
+  border: 2px solid #ffb6c1;
   color: white;
-  text-align: left;
 }
 
-.rate-card h3 {
+.rates-section .rate-card h3 {
+  margin-bottom: 10px;
   font-size: 1.4rem;
-  margin-bottom: 10px;
 }
 
-.rate-card p {
-  font-size: 1.1rem;
-  margin-bottom: 10px;
+.rates-section .rate-card p {
+  font-size: 1rem;
+}
+
+/* Book Now Button */
+.rates-section .book-btn {
+  margin-top: 20px;
+  background-color: #800000;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
   font-weight: bold;
 }
 
-.rate-card ul {
-  padding-left: 18px;
-}
-
-.rate-card li {
-  margin-bottom: 6px;
-  list-style: disc;
+.rates-section .book-btn:hover {
+  background-color: #a00000;
 }
