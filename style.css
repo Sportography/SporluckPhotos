@@ -1,3 +1,4 @@
+/* ========== GLOBAL STYLES ========== */
 body {
   margin: 0;
   font-family: 'Georgia', serif;
@@ -6,7 +7,13 @@ body {
   scroll-behavior: smooth;
 }
 
-/* Navigation */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ========== NAVIGATION ========== */
 nav {
   position: absolute;
   top: 0;
@@ -43,7 +50,7 @@ nav {
   margin-left: 10px;
 }
 
-/* Hero */
+/* ========== HERO ========== */
 .hero {
   position: relative;
   height: 100vh;
@@ -97,7 +104,7 @@ nav {
   font-weight: bold;
 }
 
-/* Gallery */
+/* ========== GALLERY ========== */
 .gallery-container {
   background: #300000;
   padding: 40px 10px;
@@ -110,7 +117,6 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
   max-width: 90%;
   margin: auto;
   overflow: hidden;
@@ -124,7 +130,6 @@ nav {
 
 .gallery-item {
   flex: 0 0 calc(33.333% - 20px);
-  max-width: 100%;
   text-align: center;
 }
 
@@ -157,7 +162,7 @@ nav {
   right: 0;
 }
 
-/* Services */
+/* ========== SERVICES ========== */
 .services {
   padding: 60px 30px;
   background: #3b0000;
@@ -187,7 +192,7 @@ nav {
   border-radius: 10px;
 }
 
-/* About */
+/* ========== ABOUT & FOOTER ========== */
 .about-contact {
   padding: 60px 30px;
   background: #3b0000;
@@ -206,7 +211,6 @@ nav {
   margin-bottom: 15px;
 }
 
-/* Footer */
 footer {
   text-align: center;
   padding: 40px 10px;
@@ -214,7 +218,7 @@ footer {
   color: #aaa;
 }
 
-/* Impact Section */
+/* ========== IMPACT ========== */
 .impact-section {
   padding: 80px 10%;
   display: flex;
@@ -267,7 +271,7 @@ footer {
   border-radius: 20px;
 }
 
-/* Form */
+/* ========== FORM ========== */
 .form-section {
   background: #330000;
   padding: 60px 20px;
@@ -320,7 +324,7 @@ button:hover {
   color: #4aff6d;
 }
 
-/* Animations */
+/* ========== ANIMATIONS & TILT ========== */
 .fade-in {
   opacity: 0;
   transform: translateY(30px);
@@ -334,7 +338,6 @@ button:hover {
   }
 }
 
-/* Tilt Effect - Subtle Y-Axis only */
 .tilt img {
   will-change: transform;
   transition: transform 0.3s ease;
@@ -344,7 +347,7 @@ button:hover {
   transform: perspective(800px) rotateX(var(--tilt-y, 0deg));
 }
 
-/* Responsive Fixes */
+/* ========== RESPONSIVE DESIGN ========== */
 @media (max-width: 768px) {
   nav {
     flex-direction: column;
@@ -386,11 +389,4 @@ button:hover {
     flex: 0 0 100%;
     max-width: 100%;
   }
-}
-
-/* Universal image constraints */
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
 }
