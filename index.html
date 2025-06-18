@@ -109,12 +109,34 @@
     </div>
 
     <footer id="contact">
-      <h3>Contact</h3>
-      <p>Email: sporluckphotos@gmail.com</p>
-      <p>Phone: (254) 449-2996</p>
-      <p>Instagram: @sporlucks.photos</p>
-      <p style="margin-top:1rem;color:#a77;">Sporluckphotos.cam</p>
-    </footer>
+  <h3>Contact</h3>
+  <p>Email: <a href="mailto:sporluckphotos@gmail.com">sporluckphotos@gmail.com</a></p>
+  <p>Phone: <a href="tel:2544492996">(254) 449-2996</a></p>
+  <p>Instagram: <a href="https://www.instagram.com/sporlucks.photos" target="_blank">@sporlucks.photos</a></p>
+  <p style="margin-top:1rem;color:#a77;">Sporluckphotos.cam</p>
+</footer>
+
   </section>
+
+  <script>
+    let galleryIndex = 0;
+    function moveGallery(direction) {
+      const track = document.getElementById("gallery-track");
+      const items = document.querySelectorAll(".gallery-item");
+      const visibleCount = window.innerWidth <= 768 ? 1 : 3;
+      const maxIndex = items.length - visibleCount;
+
+      galleryIndex += direction;
+
+      if (galleryIndex > maxIndex) {
+        galleryIndex = 0;
+      } else if (galleryIndex < 0) {
+        galleryIndex = maxIndex;
+      }
+
+      const itemWidth = items[0].offsetWidth + 20;
+      track.style.transform = `translateX(-${galleryIndex * itemWidth}px)`;
+    }
+  </script>
 </body>
 </html>
