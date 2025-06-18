@@ -8,41 +8,43 @@
   <script defer src="script.js"></script>
 </head>
 <body>
-  <!-- Updated Nav and Hero Section -->
-<header class="hero">
-  <div class="overlay">
-    <nav>
-      <div class="brand">Sporluck Photography</div>
-      <div class="nav-links">
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-        <a href="mailto:sporluckphotos@gmail.com" class="btn">Consult Now!</a>
+  <!-- Hero Section with Scroll Tilt -->
+  <header class="hero">
+    <div class="overlay">
+      <nav>
+        <div class="brand">Sporluck Photography</div>
+        <div class="nav-links">
+          <a href="#services">Services</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+          <a href="https://calendly.com/sporluckphotos/general-other?month=2025-06" class="btn" target="_blank">Consult Now!</a>
+        </div>
+      </nav>
+      <div class="hero-photo tilt" id="hero-photo">
+        <div class="hero-text">
+          <h2 class="sub">Here at Sporluck Photography...</h2>
+          <h1 class="headline">We do more than capture photos,</h1>
+          <h1 class="headline highlight">We Capture Your Moments.</h1>
+        </div>
       </div>
-    </nav>
-    <div class="hero-text">
-      <h2 class="sub">Here at Sporluck Photography...</h2>
-      <h1 class="headline">We do more than capture photos,</h1>
-      <h1 class="headline highlight">We Capture Your Moments.</h1>
     </div>
-  </div>
-</header>
+  </header>
 
-
+  <!-- Impact Section with Overlay and Tilt -->
   <section class="impact-section">
-  <div class="impact-content">
-    <div class="impact-text">
-      <h2>Here at Sporluck Photography...</h2>
-      <p class="tagline">We do more than capture photos,</p>
-      <h1 class="impact-headline">We Capture your Moments.</h1>
+    <div class="impact-content">
+      <div class="impact-photo tilt" id="impact-photo">
+        <img src="images/BBpoint.jpg" alt="Performance shot">
+        <div class="impact-overlay">
+          <h2>Here at Sporluck Photography...</h2>
+          <p class="tagline">We do more than capture photos,</p>
+          <h1 class="impact-headline">We Capture your Moments.</h1>
+        </div>
+      </div>
     </div>
-    <div class="impact-photo tilt" id="tilt-photo">
-      <img src="images/BBpoint.jpg" alt="Performance shot">
-    </div>
-  </div>
-</section>
+  </section>
 
-
+  <!-- Gallery Section -->
   <section class="gallery fade-in">
     <div class="gallery-item"><img src="images/photo1.jpg"><p>Your Friend.</p></div>
     <div class="gallery-item"><img src="images/photo2.jpg"><p>Your Moment.</p></div>
@@ -50,6 +52,7 @@
     <div class="gallery-item"><img src="images/photo4.jpg"><p>Your Love.</p></div>
   </section>
 
+  <!-- Services Section -->
   <section class="services fade-in" id="services">
     <h2>Services</h2>
     <div class="service-cards">
@@ -71,6 +74,20 @@
     </div>
   </section>
 
+  <!-- Contact Form -->
+  <section id="contact-form" class="form-section">
+    <h2>Contact Me</h2>
+    <form action="https://formspree.io/f/mqkrlznk" method="POST">
+      <input type="text" name="First Name" placeholder="First Name" required>
+      <input type="text" name="Last Name" placeholder="Last Name" required>
+      <input type="tel" name="Phone" placeholder="Phone Number" required>
+      <input type="email" name="Email" placeholder="Email" required>
+      <textarea name="Message" placeholder="Your message..." required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- About & Contact Section -->
   <section class="about-contact fade-in" id="about">
     <div class="about">
       <img src="images/about.jpg" class="rounded">

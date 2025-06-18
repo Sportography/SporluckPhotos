@@ -11,19 +11,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
   elements.forEach(el => observer.observe(el));
 });
-// 3D Tilt Effect on impact photo
-const tiltCard = document.getElementById("tilt-photo");
+// Scroll-based tilt for hero and impact photos
+function applyScrollTilt(id, maxTilt = 10) {
+  const el = document.getElementById(id);
+  if (!el) return;
 
-if (tiltCard) {
-  tiltCard.addEventListener("mousemove", (e) => {
-    const rect = tiltCard.getBoundingClientRect();
-    const x = e.clientX - rect.left - rect.width / 2;
-    const y = e.clientY - rect.top - rect.height / 2;
-
-    tiltCard.style.transform = `rotateY(${x / 30}deg) rotateX(${-y / 30}deg)`;
-  });
-
-  tiltCard.addEventListener("mouseleave", () => {
-    tiltCard.style.transform = "rotateY(0deg) rotateX(0deg)";
+  window.addEventListener("scroll", () => {
+    const rect = el.getBoundingClientRect();
+    const centerY = window.innerHeight / 2;
+    const offsetY = rect.top + rect.height / 2 - centerY;
+    const tilt = Math.max(-maxTilt, Math.min(maxTilt, -offsetY / 40));
+    el.style.transform = `rotateX(${tilt}deg)`;
   });
 }
+
+applyScrollTilt("hero-photo", 10);
+applyScrollTilt("impact-photo", 10);
+
