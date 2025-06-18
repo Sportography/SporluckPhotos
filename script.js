@@ -1,47 +1,60 @@
-// Scroll-based tilt effect
+// Tilt Effect for Scroll
 function applyTiltEffect(element) {
   window.addEventListener("scroll", () => {
     const rect = element.getBoundingClientRect();
     const centerY = rect.top + rect.height / 2;
-    const screenCenter = window.innerHeight / 2;
-    const tilt = (centerY - screenCenter) / 30;
+    const centerX = rect.left + rect.width / 2;
+    const screenCenterY = window.innerHeight / 2;
+    const screenCenterX = window.innerWidth / 2;
 
-    element.style.transform = `rotateX(${tilt}deg) rotateY(${tilt}deg)`;
+    const deltaY = (centerY - screenCenterY) / 20;
+    const deltaX = (centerX - screenCenterX) / 20;
+
+    element.style.transform = `rotateX(${deltaY}deg) rotateY(${-deltaX}deg)`;
   });
 }
 
+// Apply to hero and impact photos
 document.addEventListener("DOMContentLoaded", () => {
-  const heroTilt = document.getElementById("hero-photo");
-  const impactTilt = document.getElementById("impact-photo");
+  const heroPhoto = document.getElementById("hero-photo");
+  const impactPhoto = document.getElementById("impact-photo");
 
-  if (heroTilt) applyTiltEffect(heroTilt);
-  if (impactTilt) applyTiltEffect(impactTilt);
+  if (heroPhoto) applyTiltEffect(heroPhoto);
+  if (impactPhoto) applyTiltEffect(impactPhoto);
+});
 
-  // Contact form submission with success message
+// Form Submission Handling
+document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("contactForm");
   const status = document.getElementById("form-status");
 
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    const data = new FormData(form);
+  if (form) {
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+      const action = form.getAttribute("action");
 
-    try {
-      const res = await fetch("https://formspree.io/f/xjvnjagz", {
-        method: "POST",
-        body: data,
-        headers: {
-          Accept: "application/json",
-        },
-      });
+      try {
+        const response = await fetch(action, {
+          method: "POST",
+          body: data,
+          headers: {
+            Accept: "application/json",
+          },
+        });
 
-      if (res.ok) {
-        status.textContent = "✅ Message sent! I'll be in touch soon.";
-        form.reset();
-      } else {
-        status.textContent = "❌ Something went wrong. Try again later.";
+        if (response.ok) {
+          status.textContent = "✅ Message sent! I’ll be in touch soon.";
+          status.style.color = "#0f0";
+          form.reset();
+        } else {
+          status.textContent = "⚠️ Oops! Something went wrong.";
+          status.style.color = "#f00";
+        }
+      } catch (error) {
+        status.textContent = "⚠️ Error submitting form.";
+        status.style.color = "#f00";
       }
-    } catch (err) {
-      status.textContent = "❌ Network error. Please try again.";
-    }
-  });
+    });
+  }
 });
