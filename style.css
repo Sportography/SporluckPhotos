@@ -299,32 +299,40 @@ button:hover {
 }
 
 /* Rates Section */
-.rates-section {
-  background-color: #3b0000;
-  padding: 60px 20px;
-  text-align: center;
+.rates-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
 }
 
-.rates-section h2 {
-  font-size: 2.2rem;
-  margin-bottom: 20px;
-}
-
-.rates-section .rate-card {
-  max-width: 350px;
-  margin: 0 auto 30px;
+.rate-card {
   background: #4a0000;
-  border-radius: 12px;
-  padding: 20px;
   border: 2px solid #ffb6c1;
+  border-radius: 12px;
+  padding: 20px 30px;
+  max-width: 300px;
   color: white;
+  text-align: left;
 }
 
-.rates-section .rate-card h3 {
-  margin-bottom: 10px;
+.rate-card h3 {
   font-size: 1.4rem;
+  margin-bottom: 10px;
 }
 
-.rates-section .rate-card p {
-  font-size: 1rem;
+.rate-card p {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.rate-card ul {
+  padding-left: 18px;
+}
+
+.rate-card li {
+  margin-bottom: 6px;
+  list-style: disc;
 }
