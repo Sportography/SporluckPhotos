@@ -293,6 +293,8 @@ img {
   margin-bottom: 15px;
   border: 3px solid #ffb6c1; /* light pink border to match theme */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* optional shadow */
+    margin-left: auto;
+  margin-right: auto;
 }
 
 
@@ -474,3 +476,13 @@ button:hover {
   transform: scale(1.03);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
 }
+.gallery-item:nth-of-type(2) img {
+  object-position: center 15%;
+}
+.gallery-item:nth-of-type(3) img {
+  object-position: center 20%;
+}
+.gallery-item:nth-of-type(4) img {
+  object-position: center 20%;
+}
+
