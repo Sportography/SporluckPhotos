@@ -112,7 +112,7 @@ img {
 /* Mid Banner */
 .mid-banner {
   background-color: #300000;
-  padding: 60px 20px;
+  padding: 100px 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -131,16 +131,26 @@ img {
   flex: 1;
   min-width: 280px;
   color: white;
-}
-
-.mid-text h2 {
-  font-size: 2rem;
-  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .mid-text p {
   font-size: 1.1rem;
-  line-height: 1.5;
+}
+
+.mid-text h2:nth-child(1) {
+  font-size: 1.2rem;
+}
+
+.mid-text h2:nth-child(2) {
+  font-size: 1.7rem;
+}
+
+.mid-text h2:nth-child(3) {
+  font-size: 2.2rem;
+  color: #ffc0cb;
 }
 
 .mid-image {
@@ -270,12 +280,12 @@ img {
 }
 
 .about {
-  max-width: 350px;
+  max-width: 700px;
   margin-bottom: 40px;
 }
 
 .about img {
-  width: 150px;
+  width: 75px;
   border-radius: 15px;
   margin-bottom: 15px;
 }
