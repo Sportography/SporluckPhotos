@@ -72,3 +72,14 @@ document.addEventListener("DOMContentLoaded", () => {
   applyTiltEffect(document.getElementById("hero-photo"));
   applyTiltEffect(document.getElementById("impact-photo"));
 });
+let galleryIndex = 0;
+const track = document.getElementById("gallery-track");
+const items = document.querySelectorAll(".gallery-item");
+const visibleCount = 3;
+
+function moveSlide(direction) {
+  const maxIndex = items.length - visibleCount;
+  galleryIndex = Math.min(Math.max(galleryIndex + direction, 0), maxIndex);
+  const itemWidth = items[0].offsetWidth + 20; // +gap
+  track.style.transform = `translateX(-${galleryIndex * itemWidth}px)`;
+}
