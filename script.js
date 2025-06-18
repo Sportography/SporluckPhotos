@@ -55,3 +55,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+function applyTiltEffect(element, maxTilt = 5) {
+  window.addEventListener("scroll", () => {
+    const rect = element.getBoundingClientRect();
+    const centerY = rect.top + rect.height / 2;
+    const screenCenterY = window.innerHeight / 2;
+    const deltaY = (centerY - screenCenterY) / 50; // Smaller divisor = gentler tilt
+    const clampedY = Math.max(-maxTilt, Math.min(maxTilt, deltaY));
+
+    element.style.transform = `rotateX(${clampedY}deg)`;
+  });
+}
+
+// Apply to both
+document.addEventListener("DOMContentLoaded", () => {
+  applyTiltEffect(document.getElementById("hero-photo"));
+  applyTiltEffect(document.getElementById("impact-photo"));
+});
