@@ -56,3 +56,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+function toggleMenu() {
+  document.getElementById("navLinks").classList.toggle("active");
+}
