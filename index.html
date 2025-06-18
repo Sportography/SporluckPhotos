@@ -10,7 +10,8 @@
 </head>
 
 <body>
-  <!-- Navigation -->
+
+  <!-- Navigation Bar -->
   <nav class="solid-nav">
     <div class="brand">Sporluck Photography</div>
     <div class="nav-links">
@@ -23,38 +24,76 @@
 
   <!-- Hero Section -->
   <header class="hero">
-    <img src="images/IMG_5037.JPG" class="hero-bg shift" alt="Hero Background">
+    <img class="hero-bg" src="images/IMG_5037.JPG" alt="Hero background image">
     <div class="overlay">
       <div class="hero-text">
-        <h1 class="headline highlight">Freezing Time. Saving Memories.</h1>
+        <p class="sub">Here at Sporluck Photography...</p>
+        <h1 class="headline">We do more than capture photos,</h1>
+        <h1 class="headline highlight">We Capture your Moments.</h1>
       </div>
     </div>
-    <!-- SVG Curve Bottom -->
-    <svg class="curve-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120">
-      <path fill="#300000" d="M0,0 C480,150 960,-30 1440,60 L1440,0 L0,0 Z"></path>
+    <svg class="curve-svg" viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <path d="M0,0 C480,120 960,0 1440,120 L1440,0 L0,0 Z" fill="#300000"></path>
     </svg>
   </header>
+
+  <!-- Midway Phrase Section -->
+  <section class="impact-section fade-in">
+    <div class="impact-content">
+      <div class="impact-text">
+        <h2>Every photo tells your story.</h2>
+        <p class="tagline">Whether it’s a moment of joy or pride, we frame it forever.</p>
+        <h1 class="impact-headline">Authentic. Emotional. Timeless.</h1>
+      </div>
+      <div class="impact-photo shift">
+        <img src="images/impact-pose.png" alt="Featured photo">
+      </div>
+    </div>
+  </section>
 
   <!-- Gallery Section -->
   <section class="gallery-container">
     <button class="gallery-btn prev" onclick="moveGallery(-1)">‹</button>
     <div class="gallery-wrapper">
       <div class="gallery-track" id="gallery-track">
-        <!-- Gallery Item -->
-        <div class="gallery-item"><img src="images/IMG_1466.jpg" alt="Gallery 1"><p>Your Friend.</p></div>
-        <div class="gallery-item"><img src="images/IMG_1222.jpg" alt="Gallery 2"><p>Your Moment.</p></div>
-        <div class="gallery-item"><img src="images/IMG_0622-Enhanced-NR.jpg" alt="Gallery 3"><p>Your Time.</p></div>
-        <div class="gallery-item"><img src="images/IMG_9344-Enhanced-NR.jpg" alt="Gallery 4"><p>Your Love.</p></div>
-        <div class="gallery-item"><img src="images/IMG_0809-Enhanced-NR.jpg" alt="Gallery 5"><p>Your Team.</p></div>
-        <div class="gallery-item"><img src="images/IMG_7236-Enhanced-NR.jpg" alt="Gallery 6"><p>Your Win.</p></div>
-        <div class="gallery-item"><img src="images/IMG_4138.jpg" alt="Gallery 7"><p>Caption Ride.</p></div>
 
-        <!-- ✨ Add More Items Here
+        <!-- Gallery Items -->
+        <div class="gallery-item">
+          <img src="images/IMG_1466.jpg" alt="Gallery 1">
+          <p>Your Friend.</p>
+        </div>
+        <div class="gallery-item">
+          <img src="images/IMG_1222.jpg" alt="Gallery 2">
+          <p>Your Moment.</p>
+        </div>
+        <div class="gallery-item">
+          <img src="images/IMG_0622-Enhanced-NR.jpg" alt="Gallery 3">
+          <p>Your Time.</p>
+        </div>
+        <div class="gallery-item">
+          <img src="images/IMG_9344-Enhanced-NR.jpg" alt="Gallery 4">
+          <p>Your Love.</p>
+        </div>
+        <div class="gallery-item">
+          <img src="images/IMG_0809-Enhanced-NR.jpg" alt="Gallery 5">
+          <p>Your Team.</p>
+        </div>
+        <div class="gallery-item">
+          <img src="images/IMG_7236-Enhanced-NR.jpg" alt="Gallery 6">
+          <p>Your Win.</p>
+        </div>
+        <div class="gallery-item">
+          <img src="images/IMG_4138.jpg" alt="Gallery 7">
+          <p>Your Ride.</p>
+        </div>
+
+        <!-- To add more:
         <div class="gallery-item">
           <img src="images/YOUR_IMAGE.jpg" alt="Gallery X">
           <p>Your caption.</p>
         </div>
         -->
+
       </div>
     </div>
     <button class="gallery-btn next" onclick="moveGallery(1)">›</button>
@@ -67,17 +106,17 @@
       <div>
         <img src="images/IMG_6740.JPG" alt="Portraits">
         <h3>Portraits</h3>
-        <p>Need a resume headshot or LinkedIn-worthy portrait? Show your best self with a clean, powerful image.</p>
+        <p>Whether you need this for a resume to stand out, show your dashing smile, or add to your LinkedIn, your portrait is only a shoot away to show your best self.</p>
       </div>
       <div>
         <img src="images/IMG_8525.JPG" alt="Special Events">
         <h3>Special Events</h3>
-        <p>Clubs and organizations host memories worth keeping. Let me capture them forever.</p>
+        <p>Organizations and Clubs host events that live in memories for years, but why not forever? Book a consultation with me to make that a reality.</p>
       </div>
       <div>
         <img src="images/IMG_9310.jpg" alt="Special Moments">
         <h3>Special Moments</h3>
-        <p>From anniversaries to Ring Day to graduation, we freeze time for the moments you never want to forget.</p>
+        <p>Your special moments might feel wonderful in the moment but cherish it with a photoshoot year in the future! Your anniversary, Ring Day, or Graduation is something you shouldn’t forget.</p>
       </div>
     </div>
   </section>
@@ -96,7 +135,7 @@
     </form>
   </section>
 
-  <!-- About & Footer -->
+  <!-- About Section -->
   <section class="about-contact fade-in" id="about">
     <div class="about">
       <img src="images/IMG_20250205_144956_794.jpg" class="rounded" alt="Photographer portrait">
@@ -116,5 +155,6 @@
       <p style="margin-top:1rem;color:#a77;">Sporluckphotos.cam</p>
     </footer>
   </section>
+
 </body>
 </html>
