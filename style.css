@@ -135,7 +135,7 @@ img {
 }
 
 .gallery-item img {
-  height: 400px;
+  height: 500px;
   width: 100%;
   border-radius: 10px;
   object-fit: cover;
@@ -143,7 +143,7 @@ img {
 }
 
 .gallery-item p {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   margin-top: 8px;
 }
 
@@ -305,6 +305,9 @@ button:hover {
     flex-direction: column;
     gap: 10px;
   }
+  .rate-cards {
+    flex-direction: column;
+  }
 }
 
 /* Gallery Specific Position Tweaks */
@@ -320,38 +323,45 @@ button:hover {
 
 /* Rates Section */
 .rates-section {
-  background-color: #4a0000; /* Darker to make it stand out */
+  background-color: #4a0000;
   padding: 60px 20px;
   text-align: center;
 }
 
 .rates-section h2 {
   font-size: 2.2rem;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
-.rates-section .rate-card {
-  max-width: 350px;
-  margin: 0 auto 30px;
+.rate-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.rate-card {
+  max-width: 300px;
   background: #5a0000;
   border-radius: 12px;
   padding: 20px;
   border: 2px solid #ffb6c1;
   color: white;
+  text-align: left;
 }
 
-.rates-section .rate-card h3 {
-  margin-bottom: 10px;
+.rate-card h3 {
   font-size: 1.4rem;
+  margin-bottom: 10px;
 }
 
-.rates-section .rate-card p {
+.rate-card p {
   font-size: 1rem;
+  margin: 5px 0;
 }
 
-/* Book Now Button */
 .rates-section .book-btn {
-  margin-top: 20px;
+  margin-top: 30px;
   background-color: #800000;
   color: white;
   padding: 12px 24px;
@@ -365,4 +375,24 @@ button:hover {
 .rates-section .book-btn:hover {
   background-color: #a00000;
   border-color: #ffb6c1;
+}
+
+/* Footer Contact */
+.footer-contact {
+  background: #1e0000;
+  padding: 30px 20px;
+  text-align: center;
+  font-size: 1.1rem;
+  color: #ffb6c1;
+}
+
+.footer-contact a {
+  color: #ffb6c1;
+  text-decoration: none;
+  display: block;
+  margin: 5px 0;
+}
+
+.footer-contact a:hover {
+  text-decoration: underline;
 }
