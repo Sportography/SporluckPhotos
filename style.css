@@ -320,7 +320,7 @@ button:hover {
 
 /* Rates Section */
 .rates-section {
-  background-color: #3b0000;
+  background-color: #4a0000; /* Darker to make it stand out */
   padding: 60px 20px;
   text-align: center;
 }
@@ -333,7 +333,7 @@ button:hover {
 .rates-section .rate-card {
   max-width: 350px;
   margin: 0 auto 30px;
-  background: #4a0000;
+  background: #5a0000;
   border-radius: 12px;
   padding: 20px;
   border: 2px solid #ffb6c1;
@@ -354,14 +354,15 @@ button:hover {
   margin-top: 20px;
   background-color: #800000;
   color: white;
-  border: none;
   padding: 12px 24px;
   border-radius: 8px;
   font-size: 1rem;
   cursor: pointer;
   font-weight: bold;
+  border: 2px solid white;
 }
 
 .rates-section .book-btn:hover {
   background-color: #a00000;
+  border-color: #ffb6c1;
 }
