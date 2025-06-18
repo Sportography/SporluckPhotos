@@ -1,17 +1,16 @@
-// Tilt Effect for Scroll
-function applyTiltEffect(element) {
+// Tilt Effect for Scroll (Gentle)
+function applyTiltEffect(element, maxTilt = 5) {
   window.addEventListener("scroll", () => {
     const rect = element.getBoundingClientRect();
     const centerY = rect.top + rect.height / 2;
     const screenCenterY = window.innerHeight / 2;
-    const deltaY = (centerY - screenCenterY) / 20;
-
-    element.style.transform = `rotateX(${deltaY}deg)`;
+    const deltaY = (centerY - screenCenterY) / 50;
+    const clampedY = Math.max(-maxTilt, Math.min(maxTilt, deltaY));
+    element.style.transform = `rotateX(${clampedY}deg)`;
   });
 }
 
-
-// Apply to hero and impact photos
+// Apply tilt to elements on load
 document.addEventListener("DOMContentLoaded", () => {
   const heroPhoto = document.getElementById("hero-photo");
   const impactPhoto = document.getElementById("impact-photo");
@@ -55,31 +54,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
-function applyTiltEffect(element, maxTilt = 5) {
-  window.addEventListener("scroll", () => {
-    const rect = element.getBoundingClientRect();
-    const centerY = rect.top + rect.height / 2;
-    const screenCenterY = window.innerHeight / 2;
-    const deltaY = (centerY - screenCenterY) / 50; // Smaller divisor = gentler tilt
-    const clampedY = Math.max(-maxTilt, Math.min(maxTilt, deltaY));
 
-    element.style.transform = `rotateX(${clampedY}deg)`;
-  });
-}
-
-// Apply to both
-document.addEventListener("DOMContentLoaded", () => {
-  applyTiltEffect(document.getElementById("hero-photo"));
-  applyTiltEffect(document.getElementById("impact-photo"));
-});
+// Gallery Carousel Logic
 let galleryIndex = 0;
-const track = document.getElementById("gallery-track");
+const track = document.getElementById("galleryTrack");
 const items = document.querySelectorAll(".gallery-item");
 const visibleCount = 3;
 
-function moveSlide(direction) {
+function moveGallery(direction) {
   const maxIndex = items.length - visibleCount;
   galleryIndex = Math.min(Math.max(galleryIndex + direction, 0), maxIndex);
-  const itemWidth = items[0].offsetWidth + 20; // +gap
+  const itemWidth = items[0].offsetWidth + 20;
   track.style.transform = `translateX(-${galleryIndex * itemWidth}px)`;
 }

@@ -113,13 +113,13 @@ nav {
   position: relative;
   max-width: 90%;
   margin: auto;
+  overflow: hidden;
 }
 
 .gallery-track {
   display: flex;
   transition: transform 0.5s ease;
   gap: 20px;
-  overflow: hidden;
 }
 
 .gallery-item {

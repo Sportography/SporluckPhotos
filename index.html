@@ -6,88 +6,82 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="images/Logo.png">
   <link rel="stylesheet" href="style.css">
-  <script defer src="script.js"></script>
 </head>
 
 <body>
-  <!-- Hero Section with Scroll Tilt -->
- <header class="hero">
-  <div class="overlay">
-    <nav>
-      <div class="brand">Sporluck Photos</div>
-      <div class="nav-links">
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-        <a href="https://calendly.com/sporluckphotos/general-other?month=2025-06" class="btn" target="_blank">Consult Now!</a>
-      </div>
-    </nav>
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="overlay">
+      <nav>
+        <div class="brand">Sporluck Photos</div>
+        <div class="nav-links">
+          <a href="#services">Services</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+          <a href="https://calendly.com/sporluckphotos/general-other?month=2025-06" class="btn" target="_blank">Consult Now!</a>
+        </div>
+      </nav>
 
-    <div class="hero-content tilt" id="hero-photo">
-      <img src="images/BBpoint.jpg" alt="Hero shot">
-      <div class="hero-text">
-        <h2 class="sub">Here at Sporluck Photos...</h2>
-        <h1 class="headline">We do more than capture photos,</h1>
-        <h1 class="headline highlight">We Capture Your Moments.</h1>
+      <div class="hero-content tilt" id="hero-photo">
+        <img src="images/BBpoint.jpg" alt="Hero shot">
+        <div class="hero-text">
+          <h2 class="sub">Here at Sporluck Photos...</h2>
+          <h1 class="headline">We do more than capture photos,</h1>
+          <h1 class="headline highlight">We Capture Your Moments.</h1>
+        </div>
       </div>
     </div>
-  </div>
-</header>
-
-
-
+  </header>
 
   <!-- Gallery Section -->
-<section class="gallery-container">
-  <button class="gallery-btn prev" onclick="moveGallery(-1)">‹</button>
-  <div class="gallery-wrapper">
-    <div class="gallery-track" id="galleryTrack">
-      <div class="gallery-item">
-        <img src="images/IMG_1466.jpg" alt="Gallery 1">
-        <p>Your Friend.</p>
-      </div>
-      <div class="gallery-item">
-        <img src="images/IMG_1222.jpg" alt="Gallery 2">
-        <p>Your Moment.</p>
-      </div>
-      <div class="gallery-item">
-        <img src="images/IMG_0622-Enhanced-NR.jpg" alt="Gallery 3">
-        <p>Your Time.</p>
-      </div>
-      <div class="gallery-item">
-        <img src="images/IMG_9344-Enhanced-NR.jpg" alt="Gallery 4">
-        <p>Your Love.</p>
+  <section class="gallery-container">
+    <button class="gallery-btn prev" onclick="moveGallery(-1)">‹</button>
+    <div class="gallery-wrapper">
+      <div class="gallery-track" id="galleryTrack">
+        <div class="gallery-item">
+          <img src="images/IMG_1466.jpg" alt="Gallery 1">
+          <p>Your Friend.</p>
+        </div>
+        <div class="gallery-item">
+          <img src="images/IMG_1222.jpg" alt="Gallery 2">
+          <p>Your Moment.</p>
+        </div>
+        <div class="gallery-item">
+          <img src="images/IMG_0622-Enhanced-NR.jpg" alt="Gallery 3">
+          <p>Your Time.</p>
+        </div>
+        <div class="gallery-item">
+          <img src="images/IMG_9344-Enhanced-NR.jpg" alt="Gallery 4">
+          <p>Your Love.</p>
+        </div>
       </div>
     </div>
-  </div>
-  <button class="gallery-btn next" onclick="moveGallery(1)">›</button>
-</section>
-
-
+    <button class="gallery-btn next" onclick="moveGallery(1)">›</button>
+  </section>
 
   <!-- Services Section -->
   <section class="services fade-in" id="services">
     <h2>Services</h2>
     <div class="service-cards">
       <div>
-        <img src="images/IMG_6740.JPG">
+        <img src="images/IMG_6740.JPG" alt="Portraits">
         <h3>Portraits</h3>
         <p>Whether you need this for a resume to stand out, show your dashing smile, or add to your LinkedIn, your portrait is only a shoot away to show your best self.</p>
       </div>
       <div>
-        <img src="images/IMG_8525.JPG">
+        <img src="images/IMG_8525.JPG" alt="Events">
         <h3>Special Events</h3>
         <p>Organizations and Clubs host events that live in memories for years, but why not forever? Book a consultation with me to make that a reality.</p>
       </div>
       <div>
-        <img src="images/IMG_9310.jpg">
+        <img src="images/IMG_9310.jpg" alt="Special Moments">
         <h3>Special Moments</h3>
         <p>Your special moments might feel wonderful in the moment but cherish it with a photoshoot year in the future! Your anniversary, Ring Day, or Graduation is something you shouldn’t forget.</p>
       </div>
     </div>
   </section>
 
-  <!-- Contact Form Section -->
+  <!-- Contact Form -->
   <section id="contact-form" class="form-section">
     <h2>Contact Me</h2>
     <form id="contactForm" action="https://formspree.io/f/xzzgvgok" method="POST">
@@ -101,10 +95,10 @@
     </form>
   </section>
 
-  <!-- About & Contact Section -->
+  <!-- About & Contact -->
   <section class="about-contact fade-in" id="about">
     <div class="about">
-      <img src="images/IMG_20250205_144956_794.jpg" class="rounded">
+      <img src="images/IMG_20250205_144956_794.jpg" class="rounded" alt="James Sporluck">
       <div>
         <h2>About me</h2>
         <p>My passion first developed in late high school pursuing the perfect shot for my friends. This later followed me to Texas A&M where I continue my passion to help others capture their moment, to help remember their happiest times.</p>
@@ -121,5 +115,7 @@
       <p style="margin-top:1rem;color:#a77;">Sporluckphotos.cam</p>
     </footer>
   </section>
+
+  <script defer src="script.js"></script>
 </body>
 </html>
