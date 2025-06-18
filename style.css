@@ -135,14 +135,17 @@ img {
 }
 
 .gallery-item img {
+  height: 400px;
   width: 100%;
-  aspect-ratio: 1 / 1; /* Ensures square */
-  max-height: 500px;
+  border-radius: 10px;
   object-fit: cover;
   object-position: center;
-  border-radius: 10px;
 }
 
+.gallery-item p {
+  font-size: 1.2rem;
+  margin-top: 8px;
+}
 
 .gallery-btn {
   position: absolute;
@@ -170,18 +173,40 @@ img {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 30px;
 }
 
 .service-cards div {
-  max-width: 300px;
+  max-width: 320px;
+  background: #4b0000;
+  padding: 20px;
+  border-radius: 12px;
+  border: 2px solid #ffb6c1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .service-cards img {
-  height: 250px;
+  height: 280px;
   width: 100%;
   border-radius: 10px;
   object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.service-cards button {
+  margin-top: 15px;
+  background-color: #800000;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.service-cards button:hover {
+  background-color: #a00000;
 }
 
 /* About */
@@ -271,4 +296,35 @@ button:hover {
 .shift {
   transition: transform 0.3s ease-out;
   will-change: transform;
+}
+
+/* Rates Section */
+.rates-section {
+  background-color: #3b0000;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.rates-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+.rates-section .rate-card {
+  max-width: 350px;
+  margin: 0 auto 30px;
+  background: #4a0000;
+  border-radius: 12px;
+  padding: 20px;
+  border: 2px solid #ffb6c1;
+  color: white;
+}
+
+.rates-section .rate-card h3 {
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+}
+
+.rates-section .rate-card p {
+  font-size: 1rem;
 }
