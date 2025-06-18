@@ -23,7 +23,7 @@
         </div>
       </nav>
 
-      <div class="hero-content tilt" id="hero-photo">
+      <div class="hero-content tilt shift" id="hero-photo">
         <img src="images/BBpoint.jpg" alt="Hero shot">
         <div class="hero-text">
           <h2 class="sub">Here at Sporluck Photos...</h2>
@@ -109,13 +109,12 @@
     </div>
 
     <footer id="contact">
-  <h3>Contact</h3>
-  <p>Email: <a href="mailto:sporluckphotos@gmail.com">sporluckphotos@gmail.com</a></p>
-  <p>Phone: <a href="tel:2544492996">(254) 449-2996</a></p>
-  <p>Instagram: <a href="https://www.instagram.com/sporlucks.photos" target="_blank">@sporlucks.photos</a></p>
-  <p style="margin-top:1rem;color:#a77;">Sporluckphotos.cam</p>
-</footer>
-
+      <h3>Contact</h3>
+      <p>Email: <a href="mailto:sporluckphotos@gmail.com">sporluckphotos@gmail.com</a></p>
+      <p>Phone: <a href="tel:2544492996">(254) 449-2996</a></p>
+      <p>Instagram: <a href="https://instagram.com/sporlucks.photos" target="_blank">@sporlucks.photos</a></p>
+      <p style="margin-top:1rem;color:#a77;">Sporluckphotos.cam</p>
+    </footer>
   </section>
 
   <script>
@@ -137,6 +136,15 @@
       const itemWidth = items[0].offsetWidth + 20;
       track.style.transform = `translateX(-${galleryIndex * itemWidth}px)`;
     }
+
+    // Shift effect on scroll
+    window.addEventListener("scroll", () => {
+      document.querySelectorAll(".shift img").forEach(img => {
+        const rect = img.getBoundingClientRect();
+        const shift = (rect.top - window.innerHeight / 2) / 20;
+        img.style.transform = `translateY(${shift}px)`;
+      });
+    });
   </script>
 </body>
 </html>

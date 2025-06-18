@@ -56,17 +56,24 @@ window.addEventListener("DOMContentLoaded", () => {
 let galleryIndex = 0;
 
 function moveGallery(direction) {
-  const track = document.getElementById("galleryTrack");
+  const track = document.getElementById("gallery-track");
   const items = document.querySelectorAll(".gallery-item");
   const visibleCount = 3;
+  const totalItems = items.length;
+  const maxIndex = totalItems - visibleCount;
 
-  if (!track || items.length === 0) return;
+  galleryIndex += direction;
 
-  const maxIndex = items.length - visibleCount;
-  galleryIndex = Math.min(Math.max(galleryIndex + direction, 0), maxIndex);
-  const itemWidth = items[0].offsetWidth + 20;
+  // Loop logic
+  if (galleryIndex > maxIndex) {
+    galleryIndex = 0;
+  } else if (galleryIndex < 0) {
+    galleryIndex = maxIndex;
+  }
 
+  const itemWidth = items[0].offsetWidth + 20; // 20px gap
   track.style.transform = `translateX(-${galleryIndex * itemWidth}px)`;
 }
+
 
 window.moveGallery = moveGallery;
