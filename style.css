@@ -302,3 +302,62 @@ button {
 button:hover {
   background-color: #a00000;
 }
+
+/* Contact Form Styling */
+.form-section {
+  background: #330000;
+  padding: 60px 20px;
+  text-align: center;
+  color: white;
+}
+
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input, textarea {
+  padding: 14px;
+  border-radius: 10px;
+  border: 2px solid #ccc;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+  background-color: white;
+  color: black;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: maroon;
+  background-color: #fffafc;
+}
+
+button {
+  background-color: #800000;
+  color: white;
+  font-weight: bold;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #a00000;
+}
+
+.form-status {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #4aff6d;
+}
+
+/* Tilt Animations */
+.tilt img {
+  will-change: transform;
+  transition: transform 0.3s ease;
+}

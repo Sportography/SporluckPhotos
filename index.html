@@ -20,26 +20,27 @@
           <a href="https://calendly.com/sporluckphotos/general-other?month=2025-06" class="btn" target="_blank">Consult Now!</a>
         </div>
       </nav>
+      <div class="hero-text">
+        <h2 class="sub">Here at Sporluck Photography...</h2>
+        <h1 class="headline">We do more than capture photos,</h1>
+        <h1 class="headline highlight">We Capture Your Moments.</h1>
+      </div>
       <div class="hero-photo tilt" id="hero-photo">
-        <div class="hero-text">
-          <h2 class="sub">Here at Sporluck Photography...</h2>
-          <h1 class="headline">We do more than capture photos,</h1>
-          <h1 class="headline highlight">We Capture Your Moments.</h1>
-        </div>
+        <img src="images/hero.jpg" alt="Hero shot">
       </div>
     </div>
   </header>
 
-  <!-- Impact Section with Overlay and Tilt -->
+  <!-- Impact Section with Tilt -->
   <section class="impact-section">
     <div class="impact-content">
+      <div class="impact-text">
+        <h2>Here at Sporluck Photography...</h2>
+        <p class="tagline">We do more than capture photos,</p>
+        <h1 class="impact-headline">We Capture your Moments.</h1>
+      </div>
       <div class="impact-photo tilt" id="impact-photo">
         <img src="images/BBpoint.jpg" alt="Performance shot">
-        <div class="impact-overlay">
-          <h2>Here at Sporluck Photography...</h2>
-          <p class="tagline">We do more than capture photos,</p>
-          <h1 class="impact-headline">We Capture your Moments.</h1>
-        </div>
       </div>
     </div>
   </section>
@@ -74,16 +75,17 @@
     </div>
   </section>
 
-  <!-- Contact Form -->
+  <!-- Contact Form Section -->
   <section id="contact-form" class="form-section">
     <h2>Contact Me</h2>
-    <form action="https://formspree.io/f/mqkrlznk" method="POST">
+    <form id="contactForm" method="POST">
       <input type="text" name="First Name" placeholder="First Name" required>
       <input type="text" name="Last Name" placeholder="Last Name" required>
       <input type="tel" name="Phone" placeholder="Phone Number" required>
       <input type="email" name="Email" placeholder="Email" required>
       <textarea name="Message" placeholder="Your message..." required></textarea>
       <button type="submit">Send Message</button>
+      <p id="form-status" class="form-status"></p>
     </form>
   </section>
 

@@ -1,30 +1,47 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const elements = document.querySelectorAll(".fade-in");
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
-
-  elements.forEach(el => observer.observe(el));
-});
-// Scroll-based tilt for hero and impact photos
-function applyScrollTilt(id, maxTilt = 10) {
-  const el = document.getElementById(id);
-  if (!el) return;
-
+// Scroll-based tilt effect
+function applyTiltEffect(element) {
   window.addEventListener("scroll", () => {
-    const rect = el.getBoundingClientRect();
-    const centerY = window.innerHeight / 2;
-    const offsetY = rect.top + rect.height / 2 - centerY;
-    const tilt = Math.max(-maxTilt, Math.min(maxTilt, -offsetY / 40));
-    el.style.transform = `rotateX(${tilt}deg)`;
+    const rect = element.getBoundingClientRect();
+    const centerY = rect.top + rect.height / 2;
+    const screenCenter = window.innerHeight / 2;
+    const tilt = (centerY - screenCenter) / 30;
+
+    element.style.transform = `rotateX(${tilt}deg) rotateY(${tilt}deg)`;
   });
 }
 
-applyScrollTilt("hero-photo", 10);
-applyScrollTilt("impact-photo", 10);
+document.addEventListener("DOMContentLoaded", () => {
+  const heroTilt = document.getElementById("hero-photo");
+  const impactTilt = document.getElementById("impact-photo");
 
+  if (heroTilt) applyTiltEffect(heroTilt);
+  if (impactTilt) applyTiltEffect(impactTilt);
+
+  // Contact form submission with success message
+  const form = document.getElementById("contactForm");
+  const status = document.getElementById("form-status");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+
+    try {
+      const res = await fetch("https://formspree.io/f/xjvnjagz", {
+        method: "POST",
+        body: data,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (res.ok) {
+        status.textContent = "✅ Message sent! I'll be in touch soon.";
+        form.reset();
+      } else {
+        status.textContent = "❌ Something went wrong. Try again later.";
+      }
+    } catch (err) {
+      status.textContent = "❌ Network error. Please try again.";
+    }
+  });
+});
