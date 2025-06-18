@@ -52,14 +52,16 @@ nav.solid-nav {
 
 /* Hero Section */
 .hero {
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
   position: relative;
+  height: 100vh;
+  overflow: hidden; 
   display: flex;
   align-items: center;
   justify-content: center;
+  background-size: cover;
+  background-position: center;
 }
+
 
 .overlay {
   width: 100%;
@@ -91,23 +93,26 @@ nav.solid-nav {
 .curve-bottom::after {
   content: "";
   position: absolute;
-  bottom: 0;
+  bottom: -1px;
   left: 0;
   width: 100%;
   height: 120px;
-  background: #2e0000; /* Maroon base color */
-  clip-path: ellipse(75% 100% at 50% 100%); /* concave DOWN */
-  z-index: 2;
+  background: #2e0000;
+  border-radius: 100% 100% 0 0;
+  z-index: 2; 
 }
+
 
 /* Gallery */
 .gallery-container {
   background: #300000;
-  padding: 60px 10px;
+  padding: 40px 10px;
   text-align: center;
   position: relative;
   overflow: hidden;
+  z-index: 1; 
 }
+
 
 .gallery-wrapper {
   overflow: hidden;
