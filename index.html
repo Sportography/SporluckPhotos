@@ -11,7 +11,7 @@
 
 <body>
   <!-- Hero Section -->
-  <header class="hero" style="background-image: url('images/banner-aggie-tower.png');">
+  <header class="hero curve-bottom" style="background-image: url('images/banner-aggie-tower.png');">
     <div class="overlay">
       <nav class="solid-nav">
         <div class="brand">Sporluck Photography</div>
@@ -25,37 +25,61 @@
 
       <div class="hero-content tilt shift" id="hero-photo">
         <div class="hero-text">
-          <h1 class="headline highlight">Here to Capture your Moments</h1>
+          <h1 class="headline highlight">Freezing Time. Saving Memories.</h1>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- Gallery Section -->
-  <section class="gallery-container">
-    <button class="gallery-btn prev" onclick="moveGallery(-1)">‹</button>
-    <div class="gallery-wrapper">
-      <div class="gallery-track" id="gallery-track">
-        <div class="gallery-item">
-          <img src="images/IMG_1466.jpg" alt="Gallery 1">
-          <p>Your Friend.</p>
-        </div>
-        <div class="gallery-item">
-          <img src="images/IMG_1222.jpg" alt="Gallery 2">
-          <p>Your Moment.</p>
-        </div>
-        <div class="gallery-item">
-          <img src="images/IMG_0622-Enhanced-NR.jpg" alt="Gallery 3">
-          <p>Your Time.</p>
-        </div>
-        <div class="gallery-item">
-          <img src="images/IMG_9344-Enhanced-NR.jpg" alt="Gallery 4">
-          <p>Your Love.</p>
-        </div>
+<!-- Gallery Section -->
+<section class="gallery-container">
+  <button class="gallery-btn prev" onclick="moveGallery(-1)">‹</button>
+  <div class="gallery-wrapper">
+    <div class="gallery-track" id="gallery-track">
+      
+      <!-- Gallery Items -->
+       <!-- To add a new gallery item, copy and paste this block below inside .gallery-track:
+<div class="gallery-item">
+  <img src="images/YOUR_IMAGE.jpg" alt="Gallery X">
+  <p>Your caption.</p>
+</div>
+-->
+
+      <div class="gallery-item">
+        <img src="images/IMG_1466.jpg" alt="Gallery 1">
+        <p>Your Friend.</p>
       </div>
+      <div class="gallery-item">
+        <img src="images/IMG_1222.jpg" alt="Gallery 2">
+        <p>Your Moment.</p>
+      </div>
+      <div class="gallery-item">
+        <img src="images/IMG_0622-Enhanced-NR.jpg" alt="Gallery 3">
+        <p>Your Time.</p>
+      </div>
+      <div class="gallery-item">
+        <img src="images/IMG_9344-Enhanced-NR.jpg" alt="Gallery 4">
+        <p>Your Love.</p>
+      </div>
+
+      <!-- NEW ITEMS: Just update src + text -->
+      <div class="gallery-item">
+        <img src="images/IMG_0809-Enhanced-NR.jpg" alt="Gallery 5">
+        <p>Your Team.</p>
+      </div>
+      <div class="gallery-item">
+        <img src="images/IMG_7236-Enhanced-NR.jpg" alt="Gallery 6">
+        <p>Your Win.</p>
+      </div>
+      <div class="gallery-item">
+        <img src="images/IMG_4138.jpg" alt="Gallery 7">
+        <p>Caption Ride.</p>
+      </div>
+
     </div>
-    <button class="gallery-btn next" onclick="moveGallery(1)">›</button>
-  </section>
+  </div>
+  <button class="gallery-btn next" onclick="moveGallery(1)">›</button>
+</section>
 
   <!-- Services Section -->
   <section class="services fade-in" id="services">
@@ -123,18 +147,13 @@
       const maxIndex = items.length - visibleCount;
 
       galleryIndex += direction;
-
-      if (galleryIndex > maxIndex) {
-        galleryIndex = 0;
-      } else if (galleryIndex < 0) {
-        galleryIndex = maxIndex;
-      }
+      if (galleryIndex > maxIndex) galleryIndex = 0;
+      if (galleryIndex < 0) galleryIndex = maxIndex;
 
       const itemWidth = items[0].offsetWidth + 20;
       track.style.transform = `translateX(-${galleryIndex * itemWidth}px)`;
     }
 
-    // Shift effect on scroll
     window.addEventListener("scroll", () => {
       document.querySelectorAll(".shift img").forEach(img => {
         const rect = img.getBoundingClientRect();
