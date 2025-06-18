@@ -285,10 +285,13 @@ img {
 }
 
 .about img {
-  width: 75px;
+  width: 75px; /* adjust as needed */
   border-radius: 15px;
   margin-bottom: 15px;
+  border: 3px solid #ffb6c1; /* light pink border to match theme */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* optional shadow */
 }
+
 
 .contact-links {
   display: flex;
