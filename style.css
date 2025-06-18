@@ -54,37 +54,6 @@ img {
   font-size: 1.5rem;
   font-weight: bold;
 }
-.menu-toggle {
-  display: none;
-  font-size: 1.8rem;
-  color: white;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
-
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    gap: 10px;
-    background-color: #800000;
-    position: absolute;
-    top: 60px;
-    right: 20px;
-    padding: 10px 20px;
-    border-radius: 12px;
-    z-index: 999;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-}
 
 /* Hero */
 .hero {
@@ -143,9 +112,9 @@ img {
 /* Mid Banner */
 .mid-banner {
   background-color: #300000;
-  padding: 100px 20px;
+  padding: 140px 20px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
 }
 
@@ -155,7 +124,8 @@ img {
   gap: 40px;
   max-width: 1200px;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
+  position: relative;
 }
 
 .mid-text {
@@ -165,32 +135,34 @@ img {
   display: flex;
   flex-direction: column;
   gap: 10px;
-}
-
-.mid-text p {
-  font-size: 1.1rem;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 2;
 }
 
 .mid-text h2:nth-child(1) {
-  font-size: 1.2rem;
+  font-size: 1.6rem;
 }
 
 .mid-text h2:nth-child(2) {
-  font-size: 1.7rem;
+  font-size: 2.2rem;
 }
 
 .mid-text h2:nth-child(3) {
-  font-size: 2.2rem;
+  font-size: 2.8rem;
   color: #ffc0cb;
 }
 
 .mid-image {
   flex: 1;
   min-width: 280px;
-  max-width: 450px;
+  max-width: 650px;
   overflow: hidden;
   border-radius: 20px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 1;
 }
 
 .mid-image img {
@@ -493,4 +465,12 @@ button:hover {
 
 .footer-contact a:hover {
   text-decoration: underline;
+}
+.gallery-item img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
 }
