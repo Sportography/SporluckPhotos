@@ -453,4 +453,8 @@ button:hover {
 .gallery-item:nth-of-type(1) img {
   object-position: 55% center;
 }
+.special-moments-img {
+  object-position: center 0%; /* Move focus higher: 20% from top */
+}
+
 
