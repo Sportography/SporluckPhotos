@@ -2,53 +2,80 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Sporluck | Photography</title>
+  <title>Sporluck Photography</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <script defer src="script.js"></script>
 </head>
 <body>
-  <header class="fade-in">
-    <h1>Your Name Photography</h1>
-    <nav>
-      <a href="#gallery">Gallery</a>
-      <a href="#services">Services</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
+  <header class="hero">
+    <div class="overlay">
+      <nav>
+        <div class="brand">Sporluck Photography</div>
+        <div class="nav-links">
+          <a href="#services">Services</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+          <a href="mailto:sporluckphotos@gmail.com" class="btn">Consult Now!</a>
+        </div>
+      </nav>
+      <h1 class="headline">Here to Capture your Moments</h1>
+    </div>
   </header>
 
-  <section id="gallery" class="fade-in">
-    <h2>Featured Photos</h2>
-    <div class="photo-grid">
-      <img src="https://via.placeholder.com/300" alt="Sample photo 1">
-      <img src="https://via.placeholder.com/300" alt="Sample photo 2">
-      <img src="https://via.placeholder.com/300" alt="Sample photo 3">
+  <section class="mission fade-in">
+    <p>Here at Sporluck Photography...</p>
+    <h2>We do more than capture photos,</h2>
+    <h1>We Capture your Moments.</h1>
+    <img src="images/action.jpg" alt="Performer" class="rounded">
+  </section>
+
+  <section class="gallery fade-in">
+    <div class="gallery-item"><img src="images/photo1.jpg"><p>Your Friend.</p></div>
+    <div class="gallery-item"><img src="images/photo2.jpg"><p>Your Moment.</p></div>
+    <div class="gallery-item"><img src="images/photo3.jpg"><p>Your Time.</p></div>
+    <div class="gallery-item"><img src="images/photo4.jpg"><p>Your Love.</p></div>
+  </section>
+
+  <section class="services fade-in" id="services">
+    <h2>Services</h2>
+    <div class="service-cards">
+      <div>
+        <img src="images/service1.jpg">
+        <h3>Portraits</h3>
+        <p>Show your best self with a strong portrait for resumes, LinkedIn, or social media.</p>
+      </div>
+      <div>
+        <img src="images/service2.jpg">
+        <h3>Special Events</h3>
+        <p>From concerts to clubs, I capture the memories you'll talk about for years.</p>
+      </div>
+      <div>
+        <img src="images/service3.jpg">
+        <h3>Special Moments</h3>
+        <p>Engagements, Ring Day, Graduation – let’s freeze those big feelings in time.</p>
+      </div>
     </div>
   </section>
 
-  <section id="services" class="fade-in">
-    <h2>What I Offer</h2>
-    <ul>
-      <li>Portrait Sessions</li>
-      <li>Event Photography</li>
-      <li>Concert & Sports Coverage</li>
-      <li>Editing and Retouching</li>
-    </ul>
-    <div class="buttons">
-      <a href="https://yourbookinglink.com" target="_blank" class="button">Book a Session</a>
-      <a href="https://instagram.com/yourusername" target="_blank" class="button">View Instagram</a>
+  <section class="about-contact fade-in" id="about">
+    <div class="about">
+      <img src="images/about.jpg" class="rounded">
+      <div>
+        <h2>About me</h2>
+        <p>My passion first developed in late high school pursuing the perfect shot for my friends. This later followed me to Texas A&M where I continue my passion to help others capture their moment, to help remember their happiest times.</p>
+        <p>I didn’t quite expect for this to develop into a full business, but life has its ways, and we’re set on it.</p>
+        <p><em>– James Sporluck (Photographer)</em></p>
+      </div>
     </div>
-  </section>
 
-  <section id="about" class="fade-in">
-    <h2>About Me</h2>
-    <p>I'm a photographer currently enrolled at Texas A&M that is here to capture your moment!.</p>
+    <footer id="contact">
+      <h3>Contact</h3>
+      <p>Email: sporluckphotos@gmail.com</p>
+      <p>Phone: (254) 449-2996</p>
+      <p>Instagram: @sporlucks.photos</p>
+      <p style="margin-top:1rem;color:#a77;">Sporluckphotos.org</p>
+    </footer>
   </section>
-
-  <footer id="contact" class="fade-in">
-    <h2>Contact Me</h2>
-    <p>Email: <a href="mailto:sporluckjm@outlook.com">sporluckphotos@gmail.com</a></p>
-    <p>Phone: <a href="tel:2544492996">(254) 449-2996</a></p>
-  </footer>
 </body>
 </html>
