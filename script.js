@@ -3,16 +3,13 @@ function applyTiltEffect(element) {
   window.addEventListener("scroll", () => {
     const rect = element.getBoundingClientRect();
     const centerY = rect.top + rect.height / 2;
-    const centerX = rect.left + rect.width / 2;
     const screenCenterY = window.innerHeight / 2;
-    const screenCenterX = window.innerWidth / 2;
-
     const deltaY = (centerY - screenCenterY) / 20;
-    const deltaX = (centerX - screenCenterX) / 20;
 
-    element.style.transform = `rotateX(${deltaY}deg) rotateY(${-deltaX}deg)`;
+    element.style.transform = `rotateX(${deltaY}deg)`;
   });
 }
+
 
 // Apply to hero and impact photos
 document.addEventListener("DOMContentLoaded", () => {
