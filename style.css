@@ -139,64 +139,6 @@ img {
   margin-top: -2px;
 }
 
-/* Mid Banner */
-.mid-banner {
-  background-color: #300000;
-  padding: 140px 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.mid-content {
-  position: relative;
-  max-width: 1200px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.mid-image {
-  width: 100%;
-  height: auto;
-  max-height: 600px;
-  overflow: hidden;
-  border-radius: 20px;
-  position: relative;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
-}
-
-.mid-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.mid-text {
-  position: absolute;
-  left: 0%;
-  top: 35%;
-  color: white;
-  z-index: 2;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-  background: none;
-  padding: 0 2%;
-}
-
-.mid-text h2:nth-child(1) {
-  font-size: 1.6rem;
-}
-
-.mid-text h2:nth-child(2) {
-  font-size: 2.2rem;
-}
-
-.mid-text h2:nth-child(3) {
-  font-size: 2.8rem;
-  color: #ffc0cb;
-}
-
 /* Gallery */
 .gallery-container {
   background: #300000;
