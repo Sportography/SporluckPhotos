@@ -66,14 +66,13 @@
   </div>
   <button class="gallery-btn next" onclick="moveGallery(1)">›</button>
 </section>
-<!-- 📸 Insert this after your gallery section in index.html -->
-<section class="gallery-access-section">
-  <h2 class="gallery-access-title">Already had your photoshoot?</h2>
-  <p class="gallery-access-sub">Enter your access code below to view your private gallery.</p>
+
+<section class="code-access">
+  <h2>Already had your photoshoot? Enter your code here!</h2>
   <form id="codeAccessForm">
-    <input type="text" id="accessCode" placeholder="Enter your code (e.g., RingDay25)" required />
+    <input type="text" id="accessCode" placeholder="Enter code..." required />
     <button type="submit">View Gallery</button>
-    <p id="code-error" class="code-error"></p>
+    <p id="code-error" class="error-message"></p>
   </form>
 </section>
 
