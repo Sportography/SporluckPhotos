@@ -169,6 +169,9 @@ img {
 }
 
 /* Gallery */
+
+/* ... [top unchanged] ... */
+
 .gallery-container {
   background: #300000;
   padding: 40px 20px;
@@ -186,6 +189,8 @@ img {
   display: flex;
   transition: transform 0.5s ease;
   gap: 20px;
+  align-items: center;
+  overflow: visible;
 }
 
 .gallery-item {
@@ -199,14 +204,22 @@ img {
   border-radius: 10px;
   object-fit: cover;
   object-position: center;
-   margin-bottom: 20px;  /* extra space below image to prevent overlap */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.07);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
 }
 
 .gallery-item p {
   font-size: 1.4rem;
-  margin-top: 20px;   /* more space above the text */
-  padding-top: 10px;  /* ensures it's not squished by image */
+  margin-top: 20px;
+  padding-top: 10px;
 }
+
+/* ... [rest of original styles preserved below] ... */
 
 
 .gallery-btn {

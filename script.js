@@ -8,20 +8,24 @@ window.addEventListener("scroll", () => {
   });
 });
 
-// Gallery infinite loop scroll
+// Gallery infinite loop scroll with smoother transition
 function moveGallery(direction) {
   const track = document.getElementById("gallery-track");
   const items = document.querySelectorAll(".gallery-item");
-  const itemWidth = items[0].offsetWidth + 20; // Match CSS gallery gap
+  const itemWidth = items[0].offsetWidth + 20;
 
   if (direction === 1) {
     const first = track.firstElementChild;
-    track.appendChild(first);
     track.scrollBy({ left: itemWidth, behavior: "smooth" });
+    setTimeout(() => {
+      track.appendChild(first);
+    }, 500);
   } else if (direction === -1) {
     const last = track.lastElementChild;
-    track.insertBefore(last, track.firstElementChild);
     track.scrollBy({ left: -itemWidth, behavior: "smooth" });
+    setTimeout(() => {
+      track.insertBefore(last, track.firstElementChild);
+    }, 500);
   }
 }
 
