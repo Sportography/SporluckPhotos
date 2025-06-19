@@ -7,18 +7,21 @@ window.addEventListener("scroll", () => {
   });
 });
 
-// Gallery infinite loop slider
-let galleryIndex = 0;
-
+// Gallery infinite loop scroll
 function moveGallery(direction) {
   const track = document.getElementById("gallery-track");
   const items = document.querySelectorAll(".gallery-item");
-  const visibleCount = window.innerWidth <= 768 ? 1 : 3;
-  const totalItems = items.length;
+  const itemWidth = items[0].offsetWidth + 16; // matches CSS gap
 
-  galleryIndex = (galleryIndex + direction + totalItems) % totalItems;
-  const itemWidth = items[0].offsetWidth + 20; // Include margin
-  track.style.transform = `translateX(-${galleryIndex * itemWidth}px)`;
+  if (direction === 1) {
+    const first = track.firstElementChild;
+    track.appendChild(first);
+    track.scrollBy({ left: itemWidth, behavior: "smooth" });
+  } else if (direction === -1) {
+    const last = track.lastElementChild;
+    track.insertBefore(last, track.firstElementChild);
+    track.scrollBy({ left: -itemWidth, behavior: "smooth" });
+  }
 }
 
 // Contact form handling
@@ -56,13 +59,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
-function toggleMenu() {
-  document.getElementById("navLinks").classList.toggle("active");
-}
-function toggleMenu() {
-  const navLinks = document.getElementById("navLinks");
-  navLinks.classList.toggle("show");
-}
+
+// Hamburger menu toggle
 function toggleMenu() {
   const menu = document.getElementById("mobileMenu");
   menu.classList.toggle("active");

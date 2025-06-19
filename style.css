@@ -168,59 +168,73 @@ img {
   }
 }
 
-/* Gallery */
+/* Base Styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fdfdfd;
+  color: #222;
+}
+
+/* Navigation, buttons, etc. — assumed present above/below */
+
+/* Gallery Section */
 .gallery-container {
-  background: #300000;
-  padding: 40px 20px;
-  overflow: hidden;
-  position: relative;
+  padding: 2em 1em;
+  background-color: #fff;
+  text-align: center;
 }
 
 .gallery-wrapper {
   overflow: hidden;
-  max-width: 95%;
-  margin: auto;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .gallery-track {
   display: flex;
-  transition: transform 0.5s ease;
-  gap: 20px;
+  gap: 16px;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  overflow-x: hidden;
 }
 
 .gallery-item {
-  flex: 0 0 calc(33.333% - 20px);
-  text-align: center;
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  width: 300px;
+  border-radius: 10px;
+  transition: transform 0.3s;
 }
 
 .gallery-item img {
-  height: 500px;
   width: 100%;
-  border-radius: 10px;
-  object-fit: cover;
-  object-position: center;
+  height: auto;
+  border-radius: 8px;
+  display: block;
 }
 
-.gallery-item p {
-  font-size: 1.4rem;
-  margin-top: 8px;
+.gallery-item:hover {
+  transform: scale(1.05);
 }
 
 .gallery-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
+  background-color: maroon;
   color: white;
-  font-size: 2rem;
+  font-size: 2em;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
   cursor: pointer;
-  z-index: 10;
+  margin: 0 0.5em;
+  transition: background 0.3s;
 }
 
-.gallery-btn.prev { left: 10px; }
-.gallery-btn.next { right: 10px; }
-
+.gallery-btn:hover {
+  background-color: #4a0000;
+}
 /* Services */
 .services {
   background: #3b0000;
@@ -469,7 +483,7 @@ button:hover {
 }
 
 .gallery-item img:hover {
-  transform: scale(1.03);
+  transform: scale(1.07);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
 }
 .gallery-item:nth-of-type(2) img {
