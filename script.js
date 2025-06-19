@@ -1,4 +1,3 @@
-
 // Tilt image shift on scroll
 window.addEventListener("scroll", () => {
   document.querySelectorAll(".shift img").forEach((img) => {
@@ -8,27 +7,10 @@ window.addEventListener("scroll", () => {
   });
 });
 
-// Smooth infinite gallery scroll using transform
-let galleryOffset = 0;
-const visibleItems = 3; // Assume 3 images shown at a time
-
-function moveGallery(direction) {
-  const track = document.getElementById("gallery-track");
-  const items = track.children;
-  const itemWidth = items[0].offsetWidth + 20;
-
-  galleryOffset += direction;
-
-  // Wrap around
-  if (galleryOffset < 0) {
-    galleryOffset = items.length - visibleItems;
-  } else if (galleryOffset >= items.length) {
-    galleryOffset = 0;
-  }
-
-  const newX = -(galleryOffset * itemWidth);
-  track.style.transform = `translateX(${newX}px)`;
-  track.style.transition = 'transform 0.6s ease';
+// Hamburger menu toggle
+function toggleMenu() {
+  const menu = document.getElementById("mobileMenu");
+  menu.classList.toggle("active");
 }
 
 // Contact form handling
@@ -67,8 +49,37 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// Hamburger menu toggle
-function toggleMenu() {
-  const menu = document.getElementById("mobileMenu");
-  menu.classList.toggle("active");
+// Transform-based infinite carousel logic
+const track = document.getElementById("gallery-track");
+const items = track.querySelectorAll(".gallery-item");
+const itemWidth = items[0].offsetWidth + 20;
+let currentIndex = 3; // Start after the cloned beginning
+
+track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+
+function moveGallery(direction) {
+  const totalItems = track.children.length;
+  currentIndex += direction;
+  track.style.transition = 'transform 0.5s ease';
+  track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+
+  track.removeEventListener("transitionend", handleReset);
+  track.addEventListener("transitionend", handleReset);
+}
+
+function handleReset() {
+  const totalSlides = track.children.length;
+  const realSlides = totalSlides - 6; // 3 prepended, 3 appended
+
+  if (currentIndex >= realSlides + 3) {
+    currentIndex = 3;
+    track.style.transition = 'none';
+    track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+  } else if (currentIndex < 3) {
+    currentIndex = realSlides + 2;
+    track.style.transition = 'none';
+    track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+  }
+
+  track.removeEventListener("transitionend", handleReset);
 }
