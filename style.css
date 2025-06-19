@@ -208,7 +208,7 @@ img {
 }
 
 .gallery-item img:hover {
-  transform: scale(1.07);
+  transform: scale(1.09); /*Scales image hover effect*/
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
 }
 
@@ -407,11 +407,6 @@ button:hover {
   }
 }
 
-/* Gallery Specific Position Tweaks */
-.gallery-item:nth-of-type(3) img {
-  object-position: center top;
-}
-
 /* Tilt Effect Styling */
 .shift {
   transition: transform 0.3s ease-out;
@@ -497,10 +492,6 @@ button:hover {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.gallery-item img:hover {
-  transform: scale(1.09); /* Scales the hover animation size in gallery*/
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-}
 
 .gallery-item:nth-of-type(2) img {
   object-position: center 15%;
