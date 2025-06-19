@@ -1,3 +1,4 @@
+
 // Tilt image shift on scroll
 window.addEventListener("scroll", () => {
   document.querySelectorAll(".shift img").forEach((img) => {
@@ -11,7 +12,7 @@ window.addEventListener("scroll", () => {
 function moveGallery(direction) {
   const track = document.getElementById("gallery-track");
   const items = document.querySelectorAll(".gallery-item");
-  const itemWidth = items[0].offsetWidth + 16; // matches CSS gap
+  const itemWidth = items[0].offsetWidth + 20; // Match CSS gallery gap
 
   if (direction === 1) {
     const first = track.firstElementChild;
