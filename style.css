@@ -498,7 +498,7 @@ button:hover {
   object-position: center 0%; /* Move focus higher: 20% from top */
 }
 .gallery-item:nth-of-type(9) img {
-  object-position: center 100%;
+  object-position: center 50%;
 }
 .gallery-item:nth-of-type(10) img {
   object-position: center center;
