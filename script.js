@@ -8,25 +8,27 @@ window.addEventListener("scroll", () => {
   });
 });
 
-// Gallery infinite loop scroll with smoother transition
+// Smooth infinite gallery scroll using transform
+let galleryOffset = 0;
+const visibleItems = 3; // Assume 3 images shown at a time
+
 function moveGallery(direction) {
   const track = document.getElementById("gallery-track");
-  const items = document.querySelectorAll(".gallery-item");
+  const items = track.children;
   const itemWidth = items[0].offsetWidth + 20;
 
-  if (direction === 1) {
-    const first = track.firstElementChild;
-    track.scrollBy({ left: itemWidth, behavior: "smooth" });
-    setTimeout(() => {
-      track.appendChild(first);
-    }, 500);
-  } else if (direction === -1) {
-    const last = track.lastElementChild;
-    track.scrollBy({ left: -itemWidth, behavior: "smooth" });
-    setTimeout(() => {
-      track.insertBefore(last, track.firstElementChild);
-    }, 500);
+  galleryOffset += direction;
+
+  // Wrap around
+  if (galleryOffset < 0) {
+    galleryOffset = items.length - visibleItems;
+  } else if (galleryOffset >= items.length) {
+    galleryOffset = 0;
   }
+
+  const newX = -(galleryOffset * itemWidth);
+  track.style.transform = `translateX(${newX}px)`;
+  track.style.transition = 'transform 0.6s ease';
 }
 
 // Contact form handling

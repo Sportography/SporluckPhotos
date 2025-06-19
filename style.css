@@ -170,27 +170,26 @@ img {
 
 /* Gallery */
 
-/* ... [top unchanged] ... */
 
+/* Gallery Section */
 .gallery-container {
   background: #300000;
   padding: 40px 20px;
-  overflow: visible;
+  overflow-x: hidden;
   position: relative;
 }
 
 .gallery-wrapper {
-  overflow: visible;
+  overflow: hidden;
   max-width: 95%;
   margin: auto;
 }
 
 .gallery-track {
   display: flex;
-  transition: transform 0.5s ease;
   gap: 20px;
-  align-items: center;
-  overflow: visible;
+  transition: transform 0.6s ease;
+  will-change: transform;
 }
 
 .gallery-item {
@@ -219,9 +218,6 @@ img {
   padding-top: 10px;
 }
 
-/* ... [rest of original styles preserved below] ... */
-
-
 .gallery-btn {
   position: absolute;
   top: 50%;
@@ -236,6 +232,23 @@ img {
 
 .gallery-btn.prev { left: 10px; }
 .gallery-btn.next { right: 10px; }
+
+.gallery-item:nth-of-type(2) img {
+  object-position: center 15%;
+}
+.gallery-item:nth-of-type(3) img {
+  object-position: center 20%;
+}
+.gallery-item:nth-of-type(4) img {
+  object-position: center 20%;
+}
+.gallery-item:nth-of-type(1) img {
+  object-position: 55% center;
+}
+.special-moments-img {
+  object-position: center 0%;
+}
+
 
 /* Services */
 .services {
@@ -488,6 +501,7 @@ button:hover {
   transform: scale(1.05); /* Scales the hover animation size in gallery*/
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
 }
+/*
 .gallery-item:nth-of-type(2) img {
   object-position: center 15%;
 }
@@ -502,10 +516,11 @@ button:hover {
 }
 .special-moments-img {
   object-position: center 0%; /* Move focus higher: 20% from top */
-}
+/*}
 .gallery-item:nth-of-type(6) img {
   object-position: center 40%;
 }
 .gallery-item:nth-of-type(7) img {
   object-position: center center;
 }
+*/
