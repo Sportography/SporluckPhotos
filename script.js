@@ -91,7 +91,8 @@ document.getElementById("codeAccessForm").addEventListener("submit", function (e
   // Mapping codes to folder IDs or URLs
   const galleryCodes = {
     jeena25: "jeena25.html",
-    alexg: "alexg.html"
+    alexg: "alexg.html",
+    test123: "testGallery.html"
     // Add more codes here
   };
 
