@@ -92,7 +92,7 @@ document.getElementById("codeAccessForm").addEventListener("submit", function (e
   const galleryCodes = {
     jeena25: "jeena25.html",
     alexg: "alexg.html",
-    test123: "testGallery.html"
+    test123: "testGallery.html",
     // Add more codes here
   };
 
