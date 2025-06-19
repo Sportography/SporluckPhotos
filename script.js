@@ -83,3 +83,21 @@ function handleReset() {
 
   track.removeEventListener("transitionend", handleReset);
 }
+
+document.getElementById("codeAccessForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+  const code = document.getElementById("accessCode").value.trim().toLowerCase();
+
+  // Mapping codes to folder IDs or URLs
+  const galleryCodes = {
+    jeena25: "jeena25.html",
+    alexg: "alexg.html"
+    // Add more codes here
+  };
+
+  if (galleryCodes[code]) {
+    window.location.href = galleryCodes[code];
+  } else {
+    document.getElementById("code-error").textContent = "❌ No gallery found for that code.";
+  }
+});
