@@ -580,23 +580,24 @@ button:hover {
 }
 
 @media (max-width: 768px) {
+  main#photos {
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 5vw;
+  }
+
   .gallery-column {
     flex: 0 0 100%;
-    max-width: 100%;
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .gallery-box {
+    width: 100%;
   }
 
   .gallery-box img {
     width: 100%;
-    height: auto;
-  }
-
-  .gallery-box {
-    padding: 18px;
-    margin-bottom: 25px;
-  }
-
-  .gallery-box p {
-    font-size: 1.1rem;
   }
 }
 
