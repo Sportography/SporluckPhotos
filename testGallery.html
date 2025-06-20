@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Client Gallery</title>
+  <title>Test Gallery</title>
   <link rel="icon" href="images/Logo.png" />
   <style>
     body {
@@ -17,10 +18,10 @@
     }
 
     header.hero {
-      background-image: url('images/your_placeholder_background.jpg');
+      background-image: url('images/IMG_0824-Enhanced-NR.jpg');
       background-size: cover;
       background-position: center;
-      padding: 140px 20px 100px;
+      padding: 120px 20px;
       position: relative;
     }
 
@@ -76,23 +77,17 @@
     }
 
     main {
-      padding: 40px 5%;
-    }
-
-    .masonry {
-      column-count: 3;
-      column-gap: 20px;
+      padding: 40px 20px;
     }
 
     .gallery-item {
-      display: inline-block;
-      width: 100%;
-      margin-bottom: 20px;
-      break-inside: avoid;
+      margin: 20px auto;
+      max-width: 95%;
     }
 
     .gallery-item img {
       width: 100%;
+      max-width: 800px;
       height: auto;
       border-radius: 12px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.6);
@@ -118,18 +113,6 @@
     @keyframes fadeIn {
       to { opacity: 1; }
     }
-
-    @media (max-width: 1000px) {
-      .masonry {
-        column-count: 2;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .masonry {
-        column-count: 1;
-      }
-    }
   </style>
 </head>
 <body>
@@ -140,13 +123,12 @@
   <div class="scroll-reminder">
     See your photos below
     <br />
-    <a href="#photos" class="scroll-arrow"><span>&darr;</span></a>
+    <a href="#photos" class="scroll-arrow"><span>↓</span></a>
   </div>
 </header>
 
 <main id="photos">
-  <div class="masonry">
-    <div class="gallery-item">
+  <div class="gallery-item">
   <img src="https://lh3.googleusercontent.com/d/1FQMkVH5xeNtlF52HqFJG1HytytK5Gbbl=w1000" alt="Gallery Image" />
   <p>Your Caption</p>
 </div>
@@ -230,10 +212,6 @@
   <img src="https://lh3.googleusercontent.com/d/12G81eBKrNODz9pAI7ddmfN7IyyiTFTZf=w1000" alt="Gallery Image" />
   <p>Your Caption</p>
 </div>
-
-
-    <!-- Add more gallery-item blocks as needed -->
-  </div>
 </main>
 
 </body>
