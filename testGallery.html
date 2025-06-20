@@ -7,37 +7,29 @@
   <title>Test Gallery</title>
   <link rel="icon" href="images/Logo.png" />
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       background-color: #2e0000;
       color: white;
       font-family: 'Georgia', serif;
       margin: 0;
       padding: 0;
-      text-align: center;
+      scroll-behavior: smooth;
     }
 
-    
     header.hero {
       background-image: url('images/IMG_0824-Enhanced-NR.jpg');
       background-size: cover;
       background-position: center;
-      height: 110vh;
+      height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: 0 20px;
-      position: relative;
       text-align: center;
     }
-    
 
     .hero h1 {
-      font-size: 3.6rem;
+      font-size: 3rem;
       color: white;
       margin: 0;
       animation: fadeInUp 1.2s ease-out forwards;
@@ -49,27 +41,26 @@
     }
 
     .gallery-title {
-      font-size: 2rem;
+      font-size: 1.6rem;
       color: white;
       border: 2px solid white;
       display: inline-block;
-      padding: 12px 28px;
-      margin-top: 30px;
+      padding: 10px 20px;
+      margin-top: 20px;
       font-weight: bold;
-      animation: fadeInUp 1.2s ease-out forwards;
     }
 
     .scroll-reminder {
-      font-size: 1.4rem;
-      margin-top: 60px;
+      font-size: 1.2rem;
+      margin-top: 40px;
       opacity: 0;
       animation: fadeIn 1s ease 1.2s forwards;
     }
 
     .scroll-arrow {
       margin-top: 15px;
-      width: 60px;
-      height: 60px;
+      width: 50px;
+      height: 50px;
       background: white;
       border-radius: 50%;
       display: inline-flex;
@@ -88,51 +79,58 @@
       color: maroon;
     }
 
-    main {
+    main#photos {
       padding: 60px 5vw;
-    }
-
-    
-    .gallery-grid {
       display: flex;
-      gap: 40px;
+      gap: 30px;
       justify-content: center;
       align-items: flex-start;
-      padding: 60px 8vw;
+      flex-wrap: wrap;
     }
-    
 
     .gallery-column {
+      flex: 0 0 54%;
       display: flex;
       flex-direction: column;
-      gap: 20px;
-      flex: 1;
+      align-items: center;
     }
 
-    
-    .gallery-item img {
+    .gallery-column img {
       width: 100%;
-      max-width: 600px;
-      height: auto;
+      margin-bottom: 30px;
       border-radius: 12px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.6);
-      transition: transform 0.4s ease;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    
-
-    .gallery-item img:hover {
-      transform: scale(1.04);
+      transition: transform 0.3s ease;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
     }
 
-    .gallery-item p {
-      font-size: 1.2rem;
-      color: #ffb6c1;
-      margin-top: 10px;
-      font-weight: bold;
+    .gallery-column img:hover {
+      transform: scale(1.05);
+    }
+
+    .gallery-column p {
       text-align: center;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #ffb6c1;
+      margin-bottom: 30px;
+    }
+
+    .back-button {
+      text-align: center;
+      margin: 60px 0;
+    }
+
+    .back-button a {
+      background-color: #800000;
+      color: white;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .back-button a:hover {
+      background-color: #a00000;
     }
 
     @keyframes fadeInUp {
@@ -143,53 +141,25 @@
     @keyframes fadeIn {
       to { opacity: 1; }
     }
-  
-    .gallery-item {
-      break-inside: avoid;
-      animation: fadeInUp 0.6s ease both;
-    }
 
-    
-    .gallery-item img {
-      width: 100%;
-      max-width: 600px;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.6);
-      transition: transform 0.4s ease;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    
-
-    .gallery-item p {
-      font-size: 1.4rem;
-      color: #ffb6c1;
-      margin-top: 12px;
-      font-weight: bold;
-      text-align: center;
-      font-family: 'Georgia', serif;
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
+    @media (max-width: 768px) {
+      main#photos {
+        flex-direction: column;
+        align-items: center;
       }
-      to {
-        opacity: 1;
-        transform: translateY(0);
+
+      .gallery-column {
+        flex: 0 0 100%;
+        width: 90%;
       }
     }
-
   </style>
 </head>
 <body>
 
 <header class="hero">
   <h1>Welcome to <span class="highlight">YOUR GALLERY</span></h1>
-  <div class="gallery-title">Gallery TEST</div>
+  <div class="gallery-title">Gallery Name Here</div>
   <div class="scroll-reminder">
     See your photos below
     <br />
@@ -198,84 +168,32 @@
 </header>
 
 <main id="photos">
-<div class="gallery-grid">
   <div class="gallery-column">
-<div class="gallery-item">
-  <img src="https://lh3.googleusercontent.com/d/1FQMkVH5xeNtlF52HqFJG1HytytK5Gbbl=w1000" alt="Gallery Image" />
-  <p>Your Caption</p>
-</div>
-<div class="gallery-item">
-  <img src="https://lh3.googleusercontent.com/d/1ysyscYy1wZ6UICETx13wT8gSpYQOSWJt=w1000" alt="Gallery Image" />
-  <p>Your Caption</p>
-</div>
-<div class="gallery-item">
-  <img src="https://lh3.googleusercontent.com/d/179AGUw5J1skGrbSX2Yl8ZofikSYzm8NA=w1000" alt="Gallery Image" />
-  <p>Your Caption</p>
-</div>
-<div class="gallery-item">
-  <img src="https://lh3.googleusercontent.com/d/1ikcXq8Q4bWOGieYxhkkzprJbL5mrk9o5=w1000" alt="Gallery Image" />
-  <p>Your Caption</p>
-</div>
-<div class="gallery-item">
-  <img src="https://lh3.googleusercontent.com/d/1ytxivHEL2jf9MhxHr_uvHtHOMdxB3nzk=w1000" alt="Gallery Image" />
-  <p>Your Caption</p>
-</div>
-<div class="gallery-item">
-  <img src="https://lh3.googleusercontent.com/d/1TAgsVuMwtSt5YolOp2glWcQaYN0y0KXS=w1000" alt="Gallery Image" />
-  <p>Your Caption</p>
-</div>
-<div class="gallery-item">
-  <img src="https://lh3.googleusercontent.com/d/1chxdwMsfCB1oHWuEjaBMPeDGEJQ9dWYX=w1000" alt="Gallery Image" />
-  <p>Your Caption</p>
-</div>
-<div class="gallery-item">
-  <img src="https://lh3.googleusercontent.com/d/1p6aCWFzp7zFrRPWOTNy_dQAgWpvQq3je=w1000" alt="Gallery Image" />
-  <p>Your Caption</p>
-</div>
+    <img src="https://lh3.googleusercontent.com/d/1FQMkVH5xeNtlF52HqFJG1HytytK5Gbbl=w1000" alt="Gallery Image" />
+    <p>Your Caption</p>
+    <img src="https://lh3.googleusercontent.com/d/1tYPOH7MGWMDLDDx_0f_O8hEOGkuBi9tB=w1000" alt="Gallery Image" />
+    <p>Your Caption</p>
+    <img src="https://lh3.googleusercontent.com/d/1ysyscYy1wZ6UICETx13wT8gSpYQOSWJt=w1000" alt="Gallery Image" />
+    <p>Your Caption</p>
+    <img src="https://lh3.googleusercontent.com/d/1oRq8sHSKlLnLMDkrbagux--uM-3RwCA_=w1000" alt="Gallery Image" />
+    <p>Your Caption</p>
   </div>
+
   <div class="gallery-column">
-<div class="gallery-item">
-  <img src="https://lh3.googleusercontent.com/d/1tYPOH7MGWMDLDDx_0f_O8hEOGkuBi9tB=w1000" alt="Gallery Image" />
-  <p>Your Caption</p>
-</div>
-<div class="gallery-item">
-  <img src="https://lh3.googleusercontent.com/d/1oRq8sHSKlLnLMDkrbagux--uM-3RwCA_=w1000" alt="Gallery Image" />
-  <p>Your Caption</p>
-</div>
-<div class="gallery-item">
-  <img src="https://lh3.googleusercontent.com/d/1nAVI1WIH_0cegxC-XN7DUNX5K5NA__Wz=w1000" alt="Gallery Image" />
-  <p>Your Caption</p>
-</div>
-<div class="gallery-item">
-  <img src="https://lh3.googleusercontent.com/d/1DKOMwY47aw87AcFPnZn6epYr7HD1IVOE=w1000" alt="Gallery Image" />
-  <p>Your Caption</p>
-</div>
-<div class="gallery-item">
-  <img src="https://lh3.googleusercontent.com/d/1w3x8vXV9JsqKv2wSMtHzziU3qQAjy2vo=w1000" alt="Gallery Image" />
-  <p>Your Caption</p>
-</div>
-<div class="gallery-item">
-  <img src="https://lh3.googleusercontent.com/d/1o5PCmPP2VFJ4qEflr70uHMzIpqJ7sVKC=w1000" alt="Gallery Image" />
-  <p>Your Caption</p>
-</div>
-<div class="gallery-item">
-  <img src="https://lh3.googleusercontent.com/d/1jwT-Ad-71Qt6m_UhCiDd2NKo05Q3aEv8=w1000" alt="Gallery Image" />
-  <p>Your Caption</p>
-</div>
-<div class="gallery-item">
-  <img src="https://lh3.googleusercontent.com/d/1Xd4-eMHhMdLQwxLyTn9cWu1ScKWC-eAz=w1000" alt="Gallery Image" />
-  <p>Your Caption</p>
-</div>
-<div class="gallery-item">
-  <img src="https://lh3.googleusercontent.com/d/12G81eBKrNODz9pAI7ddmfN7IyyiTFTZf=w1000" alt="Gallery Image" />
-  <p>Your Caption</p>
-</div>
+    <img src="https://lh3.googleusercontent.com/d/179AGUw5J1skGrbSX2Yl8zofikSYzm8NA=w1000" alt="Gallery Image" />
+    <p>Your Caption</p>
+    <img src="https://lh3.googleusercontent.com/d/1nAVI1WIH_0cegxC-XN7DUNX5K5NA__Wz=w1000" alt="Gallery Image" />
+    <p>Your Caption</p>
+    <img src="https://lh3.googleusercontent.com/d/1ikcXq8Q4bWOGieYxhkkzprJbL5mrk9o5=w1000" alt="Gallery Image" />
+    <p>Your Caption</p>
+    <img src="https://lh3.googleusercontent.com/d/1DKOMwY47aw87AcFPnZn6epYr7HD1IVOE=w1000" alt="Gallery Image" />
+    <p>Your Caption</p>
   </div>
-</div>
 </main>
 
-  <footer style="margin: 60px 0 40px;">
-    <a href="index.html" style="background:#800000; color:white; padding:14px 28px; border-radius:8px; text-decoration:none; font-weight:bold;">← Back to Home</a>
-  </footer>
+<div class="back-button">
+  <a href="index.html">← Back to Home</a>
+</div>
+
 </body>
 </html>
