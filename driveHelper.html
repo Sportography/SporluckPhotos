@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,22 +46,20 @@
       margin-left: auto;
       margin-right: auto;
     }
-    
-.home-button {
-  display: inline-block;
-  margin: 20px auto;
-  background-color: #800000;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-  text-align: center;
-}
-.home-button:hover {
-  background-color: #a00000;
-}
-
+    .home-button {
+      display: inline-block;
+      margin: 20px auto;
+      background-color: #800000;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      text-align: center;
+    }
+    .home-button:hover {
+      background-color: #a00000;
+    }
   </style>
 </head>
 <body>
@@ -68,9 +67,8 @@
   <p>Paste Google Drive links (one per line):</p>
   <textarea id="driveLinks" rows="6" placeholder="Paste links here..."></textarea><br>
   <button onclick="convertLinks()">Generate Gallery Blocks</button>
-<a href="index.html" class="home-button">← Back to Home</a>
-<div id="result" class="output"></div>
 
+  <a href="index.html" class="home-button">← Back to Home</a>
   <div id="result" class="output"></div>
 
   <script>
@@ -85,7 +83,7 @@
         if (match) {
           const fileId = match[1];
           output += `<div class="gallery-item">\n` +
-                    `  <img src="https://drive.google.com/uc?export=view&id=${fileId}" alt="Gallery Image" />\n` +
+                    `  <img src="https://lh3.googleusercontent.com/d/${fileId}=w1000" alt="Gallery Image" />\n` +
                     `  <p>Your Caption</p>\n</div>\n\n`;
         } else {
           output += `⚠️ Invalid link: ${link}\n\n`;
