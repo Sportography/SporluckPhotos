@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Test Gallery</title>
+  <title>Client Gallery</title>
   <link rel="icon" href="images/Logo.png" />
-  <link rel="stylesheet" href="style.css" />
   <style>
     body {
       background-color: #2e0000;
@@ -18,139 +17,136 @@
     }
 
     header.hero {
-      background: url('images/IMG_6130.jpg') no-repeat center center/cover;
-      padding: 150px 20px 100px;
+      background-image: url('images/your_placeholder_background.jpg');
+      background-size: cover;
+      background-position: center;
+      padding: 140px 20px 100px;
       position: relative;
     }
 
-    header.hero::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.6);
-    }
-
-    header.hero h1 {
-      position: relative;
-      font-size: 3.5rem;
+    .hero h1 {
+      font-size: 3rem;
       color: white;
       margin: 0;
-      animation: fadeInUp 1.2s ease-out;
+      animation: fadeInUp 1.2s ease-out forwards;
     }
 
-    header.hero .highlight {
+    .highlight {
       color: #ffc0cb;
       font-weight: bold;
     }
 
-    .gallery-name {
-      font-size: 2rem;
-      font-weight: bold;
+    .gallery-title {
+      font-size: 1.5rem;
       color: white;
-      display: inline-block;
       border: 2px solid white;
+      display: inline-block;
       padding: 10px 20px;
       margin-top: 20px;
-      animation: fadeInUp 1.4s ease-out;
+      font-weight: bold;
     }
 
-    .gallery-wrapper {
-      display: flex;
-      flex-wrap: wrap;
+    .scroll-reminder {
+      font-size: 1.2rem;
+      margin-top: 40px;
+      opacity: 0;
+      animation: fadeIn 1s ease 1.2s forwards;
+    }
+
+    .scroll-arrow {
+      margin-top: 15px;
+      width: 50px;
+      height: 50px;
+      background: white;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
       justify-content: center;
-      gap: 30px;
-      padding: 50px 20px;
-      background-color: #3b0000;
+      text-decoration: none;
+      transition: transform 0.3s;
+    }
+
+    .scroll-arrow:hover {
+      transform: scale(1.1);
+    }
+
+    .scroll-arrow span {
+      font-size: 2rem;
+      color: maroon;
+    }
+
+    main {
+      padding: 40px 5%;
+    }
+
+    .masonry {
+      column-count: 3;
+      column-gap: 20px;
     }
 
     .gallery-item {
-      flex: 1 1 40%;
-      max-width: 800px;
-      transition: transform 0.3s ease;
-    }
-
-    .gallery-item:hover {
-      transform: scale(1.05);
+      display: inline-block;
+      width: 100%;
+      margin-bottom: 20px;
+      break-inside: avoid;
     }
 
     .gallery-item img {
       width: 100%;
       height: auto;
-      border-radius: 10px;
-      display: block;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+      transition: transform 0.4s ease;
+    }
+
+    .gallery-item img:hover {
+      transform: scale(1.04);
     }
 
     .gallery-item p {
-      font-size: 1.6rem;
-      margin-top: 12px;
-      color: #ffc0cb;
-      font-weight: bold;
-      text-align: center;
-    }
-
-    .note {
-      margin-top: 40px;
-      font-size: 1rem;
+      font-size: 1.2rem;
       color: #ffb6c1;
-    }
-
-    .back-button {
-      display: inline-block;
-      margin: 40px 0 20px;
-      padding: 12px 24px;
-      background-color: #800000;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
+      margin-top: 10px;
       font-weight: bold;
-      transition: background 0.3s;
-    }
-
-    .back-button:hover {
-      background-color: #a00000;
-    }
-
-    @media (max-width: 768px) {
-      .gallery-item {
-        flex: 1 1 90%;
-      }
-
-      header.hero h1 {
-        font-size: 2.2rem;
-      }
-
-      .gallery-name {
-        font-size: 1.5rem;
-        padding: 6px 14px;
-      }
     }
 
     @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    @media (max-width: 1000px) {
+      .masonry {
+        column-count: 2;
       }
-      to {
-        opacity: 1;
-        transform: translateY(0);
+    }
+
+    @media (max-width: 600px) {
+      .masonry {
+        column-count: 1;
       }
     }
   </style>
 </head>
 <body>
-  <header class="hero">
-    <h1>Welcome to <span class="highlight">Your Gallery</span></h1>
-    <div class="gallery-name">Gallery Name</div>
-  </header>
 
-  <main>
-    <div class="gallery-wrapper">
-      <!-- Sample gallery items (replace/add more as needed) -->
-      
-        <div class="gallery-item">
+<header class="hero">
+  <h1>Welcome to <span class="highlight">YOUR GALLERY</span></h1>
+  <div class="gallery-title">Gallery Name Here</div>
+  <div class="scroll-reminder">
+    See your photos below
+    <br />
+    <a href="#photos" class="scroll-arrow"><span>&darr;</span></a>
+  </div>
+</header>
+
+<main id="photos">
+  <div class="masonry">
+    <div class="gallery-item">
   <img src="https://lh3.googleusercontent.com/d/1FQMkVH5xeNtlF52HqFJG1HytytK5Gbbl=w1000" alt="Gallery Image" />
   <p>Your Caption</p>
 </div>
@@ -236,10 +232,9 @@
 </div>
 
 
-    </div>
+    <!-- Add more gallery-item blocks as needed -->
+  </div>
+</main>
 
-    <p class="note">Click on an image to view or download.</p>
-    <a href="index.html" class="back-button">← Back to Home</a>
-  </main>
 </body>
 </html>
