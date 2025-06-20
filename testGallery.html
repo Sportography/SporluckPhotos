@@ -4,8 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Test Gallery</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Client Gallery</title>
   <style>
     body {
       background-color: #2e0000;
@@ -80,6 +79,31 @@
       background-color: #a00000;
     }
 
+    .highlights {
+      background-color: #3b0000;
+      padding: 20px 10px;
+      overflow-x: hidden;
+    }
+
+    .scroll-track {
+      display: flex;
+      gap: 20px;
+      animation: scrollLeft 30s linear infinite;
+    }
+
+    .scroll-track img {
+      height: 300px;
+      width: 300px;
+      object-fit: cover;
+      border-radius: 12px;
+      flex-shrink: 0;
+    }
+
+    @keyframes scrollLeft {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
@@ -89,9 +113,19 @@
 <body>
   <header class="hero">
     <h1>Welcome to Your Gallery</h1>
-    <!-- First image featured manually -->
-    <img src="https://drive.google.com/thumbnail?id=186R66Ne7h8UwzL2SoNbutlMuHLzrsOr2" alt="Cover Image" class="cover-img" />
+    <img src="https://drive.google.com/uc?export=view&id=186R66Ne7h8UwzL2SoNbutlMuHLzrsOr2" alt="Cover Image" class="cover-img" />
   </header>
+
+  <section class="highlights">
+    <div class="scroll-track">
+      <img src="https://drive.google.com/uc?export=view&id=186R66Ne7h8UwzL2SoNbutlMuHLzrsOr2" alt="Highlight 1" />
+      <img src="https://drive.google.com/uc?export=view&id=186R66Ne7h8UwzL2SoNbutlMuHLzrsOr2" alt="Highlight 2" />
+      <img src="https://drive.google.com/uc?export=view&id=186R66Ne7h8UwzL2SoNbutlMuHLzrsOr2" alt="Highlight 3" />
+      <img src="https://drive.google.com/uc?export=view&id=186R66Ne7h8UwzL2SoNbutlMuHLzrsOr2" alt="Highlight 4" />
+      <img src="https://drive.google.com/uc?export=view&id=186R66Ne7h8UwzL2SoNbutlMuHLzrsOr2" alt="Highlight 5" />
+      <img src="https://drive.google.com/uc?export=view&id=186R66Ne7h8UwzL2SoNbutlMuHLzrsOr2" alt="Highlight 6" />
+    </div>
+  </section>
 
   <main>
     <div class="gallery-wrapper">
@@ -102,7 +136,6 @@
   </main>
 
   <script>
-    // Fade in iframe when it enters viewport
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
