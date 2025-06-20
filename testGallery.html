@@ -24,8 +24,14 @@
       background-image: url('images/IMG_0824-Enhanced-NR.jpg');
       background-size: cover;
       background-position: center;
-      padding: 200px 20px 100px;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0 20px;
       position: relative;
+      text-align: center;
     }
 
     .hero h1 {
@@ -80,82 +86,30 @@
     }
 
     main {
-      padding: 60px 20px;
+      padding: 60px 5vw;
     }
 
-    .gallery-item {
-      margin: 40px auto;
-      max-width: 95%;
-    }
-
-    .gallery-item img {
-      width: 100%;
-      max-width: 1000px;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.6);
-      transition: transform 0.4s ease;
-    }
-
-    .gallery-item img:hover {
-      transform: scale(1.04);
-    }
-
-    .gallery-item p {
-      font-size: 1.5rem;
-      color: #ffb6c1;
-      margin-top: 10px;
-      font-weight: bold;
-    }
-
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeIn {
-      to { opacity: 1; }
-    }
-  
     .gallery-grid {
       display: flex;
-      flex-wrap: wrap;
+      gap: 30px;
       justify-content: center;
       align-items: flex-start;
+    }
+
+    .gallery-column {
+      display: flex;
+      flex-direction: column;
       gap: 20px;
-      padding: 40px 20px;
-    }
-
-    .gallery-item {
-      flex: 1 1 300px;
-      max-width: 48%;
-      margin: 0;
+      flex: 1;
     }
 
     .gallery-item img {
       width: 100%;
       height: auto;
-    }
-
-  
-    .gallery-grid {
-      column-count: 2;
-      column-gap: 30px;
-      padding: 40px 10vw;
-    }
-
-    .gallery-item {
-      break-inside: avoid;
-      margin-bottom: 30px;
-    }
-
-    .gallery-item img {
-      width: 100%;
-      height: auto;
-      display: block;
       border-radius: 12px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.6);
       transition: transform 0.4s ease;
+      display: block;
     }
 
     .gallery-item img:hover {
@@ -170,13 +124,51 @@
       text-align: center;
     }
 
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+  
+    .gallery-item {
+      break-inside: avoid;
+      animation: fadeInUp 0.6s ease both;
+    }
+
+    .gallery-item img {
+      animation: fadeInUp 0.6s ease both;
+    }
+
+    .gallery-item p {
+      font-size: 1.4rem;
+      color: #ffb6c1;
+      margin-top: 12px;
+      font-weight: bold;
+      text-align: center;
+      font-family: 'Georgia', serif;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
   </style>
 </head>
 <body>
 
 <header class="hero">
   <h1>Welcome to <span class="highlight">YOUR GALLERY</span></h1>
-  <div class="gallery-title">Gallery Name Here</div>
+  <div class="gallery-title">Gallery RAHHH</div>
   <div class="scroll-reminder">
     See your photos below
     <br />
@@ -185,13 +177,10 @@
 </header>
 
 <main id="photos">
-  <div class="gallery-grid">
+<div class="gallery-grid">
+  <div class="gallery-column">
 <div class="gallery-item">
   <img src="https://lh3.googleusercontent.com/d/1FQMkVH5xeNtlF52HqFJG1HytytK5Gbbl=w1000" alt="Gallery Image" />
-  <p>Your Caption</p>
-</div>
-<div class="gallery-item">
-  <img src="https://lh3.googleusercontent.com/d/1tYPOH7MGWMDLDDx_0f_O8hEOGkuBi9tB=w1000" alt="Gallery Image" />
   <p>Your Caption</p>
 </div>
 <div class="gallery-item">
@@ -199,15 +188,7 @@
   <p>Your Caption</p>
 </div>
 <div class="gallery-item">
-  <img src="https://lh3.googleusercontent.com/d/1oRq8sHSKlLnLMDkrbagux--uM-3RwCA_=w1000" alt="Gallery Image" />
-  <p>Your Caption</p>
-</div>
-<div class="gallery-item">
   <img src="https://lh3.googleusercontent.com/d/179AGUw5J1skGrbSX2Yl8ZofikSYzm8NA=w1000" alt="Gallery Image" />
-  <p>Your Caption</p>
-</div>
-<div class="gallery-item">
-  <img src="https://lh3.googleusercontent.com/d/1nAVI1WIH_0cegxC-XN7DUNX5K5NA__Wz=w1000" alt="Gallery Image" />
   <p>Your Caption</p>
 </div>
 <div class="gallery-item">
@@ -215,15 +196,7 @@
   <p>Your Caption</p>
 </div>
 <div class="gallery-item">
-  <img src="https://lh3.googleusercontent.com/d/1DKOMwY47aw87AcFPnZn6epYr7HD1IVOE=w1000" alt="Gallery Image" />
-  <p>Your Caption</p>
-</div>
-<div class="gallery-item">
   <img src="https://lh3.googleusercontent.com/d/1ytxivHEL2jf9MhxHr_uvHtHOMdxB3nzk=w1000" alt="Gallery Image" />
-  <p>Your Caption</p>
-</div>
-<div class="gallery-item">
-  <img src="https://lh3.googleusercontent.com/d/1w3x8vXV9JsqKv2wSMtHzziU3qQAjy2vo=w1000" alt="Gallery Image" />
   <p>Your Caption</p>
 </div>
 <div class="gallery-item">
@@ -231,19 +204,41 @@
   <p>Your Caption</p>
 </div>
 <div class="gallery-item">
-  <img src="https://lh3.googleusercontent.com/d/1o5PCmPP2VFJ4qEflr70uHMzIpqJ7sVKC=w1000" alt="Gallery Image" />
-  <p>Your Caption</p>
-</div>
-<div class="gallery-item">
   <img src="https://lh3.googleusercontent.com/d/1chxdwMsfCB1oHWuEjaBMPeDGEJQ9dWYX=w1000" alt="Gallery Image" />
   <p>Your Caption</p>
 </div>
 <div class="gallery-item">
-  <img src="https://lh3.googleusercontent.com/d/1jwT-Ad-71Qt6m_UhCiDd2NKo05Q3aEv8=w1000" alt="Gallery Image" />
+  <img src="https://lh3.googleusercontent.com/d/1p6aCWFzp7zFrRPWOTNy_dQAgWpvQq3je=w1000" alt="Gallery Image" />
+  <p>Your Caption</p>
+</div>
+  </div>
+  <div class="gallery-column">
+<div class="gallery-item">
+  <img src="https://lh3.googleusercontent.com/d/1tYPOH7MGWMDLDDx_0f_O8hEOGkuBi9tB=w1000" alt="Gallery Image" />
   <p>Your Caption</p>
 </div>
 <div class="gallery-item">
-  <img src="https://lh3.googleusercontent.com/d/1p6aCWFzp7zFrRPWOTNy_dQAgWpvQq3je=w1000" alt="Gallery Image" />
+  <img src="https://lh3.googleusercontent.com/d/1oRq8sHSKlLnLMDkrbagux--uM-3RwCA_=w1000" alt="Gallery Image" />
+  <p>Your Caption</p>
+</div>
+<div class="gallery-item">
+  <img src="https://lh3.googleusercontent.com/d/1nAVI1WIH_0cegxC-XN7DUNX5K5NA__Wz=w1000" alt="Gallery Image" />
+  <p>Your Caption</p>
+</div>
+<div class="gallery-item">
+  <img src="https://lh3.googleusercontent.com/d/1DKOMwY47aw87AcFPnZn6epYr7HD1IVOE=w1000" alt="Gallery Image" />
+  <p>Your Caption</p>
+</div>
+<div class="gallery-item">
+  <img src="https://lh3.googleusercontent.com/d/1w3x8vXV9JsqKv2wSMtHzziU3qQAjy2vo=w1000" alt="Gallery Image" />
+  <p>Your Caption</p>
+</div>
+<div class="gallery-item">
+  <img src="https://lh3.googleusercontent.com/d/1o5PCmPP2VFJ4qEflr70uHMzIpqJ7sVKC=w1000" alt="Gallery Image" />
+  <p>Your Caption</p>
+</div>
+<div class="gallery-item">
+  <img src="https://lh3.googleusercontent.com/d/1jwT-Ad-71Qt6m_UhCiDd2NKo05Q3aEv8=w1000" alt="Gallery Image" />
   <p>Your Caption</p>
 </div>
 <div class="gallery-item">
@@ -255,6 +250,7 @@
   <p>Your Caption</p>
 </div>
   </div>
+</div>
 </main>
 </body>
 </html>

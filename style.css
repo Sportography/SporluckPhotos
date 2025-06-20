@@ -555,5 +555,19 @@ button:hover {
   color: #ffb6c1;
   font-weight: bold;
 }
+.gallery-grid {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.gallery-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+  min-width: 0;
+}
 
 
