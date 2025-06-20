@@ -7,6 +7,10 @@
   <title>Test Gallery</title>
   <link rel="icon" href="images/Logo.png" />
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       background-color: #2e0000;
       color: white;
@@ -14,19 +18,18 @@
       margin: 0;
       padding: 0;
       text-align: center;
-      scroll-behavior: smooth;
     }
 
     header.hero {
       background-image: url('images/IMG_0824-Enhanced-NR.jpg');
       background-size: cover;
       background-position: center;
-      padding: 120px 20px;
+      padding: 200px 20px 100px;
       position: relative;
     }
 
     .hero h1 {
-      font-size: 3rem;
+      font-size: 3.6rem;
       color: white;
       margin: 0;
       animation: fadeInUp 1.2s ease-out forwards;
@@ -38,26 +41,26 @@
     }
 
     .gallery-title {
-      font-size: 1.5rem;
+      font-size: 2rem;
       color: white;
       border: 2px solid white;
       display: inline-block;
-      padding: 10px 20px;
-      margin-top: 20px;
+      padding: 12px 28px;
+      margin-top: 30px;
       font-weight: bold;
     }
 
     .scroll-reminder {
-      font-size: 1.2rem;
-      margin-top: 40px;
+      font-size: 1.4rem;
+      margin-top: 60px;
       opacity: 0;
       animation: fadeIn 1s ease 1.2s forwards;
     }
 
     .scroll-arrow {
       margin-top: 15px;
-      width: 50px;
-      height: 50px;
+      width: 60px;
+      height: 60px;
       background: white;
       border-radius: 50%;
       display: inline-flex;
@@ -77,17 +80,17 @@
     }
 
     main {
-      padding: 40px 20px;
+      padding: 60px 20px;
     }
 
     .gallery-item {
-      margin: 20px auto;
+      margin: 40px auto;
       max-width: 95%;
     }
 
     .gallery-item img {
       width: 100%;
-      max-width: 800px;
+      max-width: 1000px;
       height: auto;
       border-radius: 12px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.6);
@@ -99,7 +102,7 @@
     }
 
     .gallery-item p {
-      font-size: 1.2rem;
+      font-size: 1.5rem;
       color: #ffb6c1;
       margin-top: 10px;
       font-weight: bold;
@@ -119,7 +122,7 @@
 
 <header class="hero">
   <h1>Welcome to <span class="highlight">YOUR GALLERY</span></h1>
-  <div class="gallery-title">Gallery Name Here</div>
+  <div class="gallery-title">Test Gallery</div>
   <div class="scroll-reminder">
     See your photos below
     <br />
@@ -128,91 +131,74 @@
 </header>
 
 <main id="photos">
-  <div class="gallery-item">
+<div class="gallery-item">
   <img src="https://lh3.googleusercontent.com/d/1FQMkVH5xeNtlF52HqFJG1HytytK5Gbbl=w1000" alt="Gallery Image" />
   <p>Your Caption</p>
 </div>
-
 <div class="gallery-item">
   <img src="https://lh3.googleusercontent.com/d/1tYPOH7MGWMDLDDx_0f_O8hEOGkuBi9tB=w1000" alt="Gallery Image" />
   <p>Your Caption</p>
 </div>
-
 <div class="gallery-item">
   <img src="https://lh3.googleusercontent.com/d/1ysyscYy1wZ6UICETx13wT8gSpYQOSWJt=w1000" alt="Gallery Image" />
   <p>Your Caption</p>
 </div>
-
 <div class="gallery-item">
   <img src="https://lh3.googleusercontent.com/d/1oRq8sHSKlLnLMDkrbagux--uM-3RwCA_=w1000" alt="Gallery Image" />
   <p>Your Caption</p>
 </div>
-
 <div class="gallery-item">
   <img src="https://lh3.googleusercontent.com/d/179AGUw5J1skGrbSX2Yl8ZofikSYzm8NA=w1000" alt="Gallery Image" />
   <p>Your Caption</p>
 </div>
-
 <div class="gallery-item">
   <img src="https://lh3.googleusercontent.com/d/1nAVI1WIH_0cegxC-XN7DUNX5K5NA__Wz=w1000" alt="Gallery Image" />
   <p>Your Caption</p>
 </div>
-
 <div class="gallery-item">
   <img src="https://lh3.googleusercontent.com/d/1ikcXq8Q4bWOGieYxhkkzprJbL5mrk9o5=w1000" alt="Gallery Image" />
   <p>Your Caption</p>
 </div>
-
 <div class="gallery-item">
   <img src="https://lh3.googleusercontent.com/d/1DKOMwY47aw87AcFPnZn6epYr7HD1IVOE=w1000" alt="Gallery Image" />
   <p>Your Caption</p>
 </div>
-
 <div class="gallery-item">
   <img src="https://lh3.googleusercontent.com/d/1ytxivHEL2jf9MhxHr_uvHtHOMdxB3nzk=w1000" alt="Gallery Image" />
   <p>Your Caption</p>
 </div>
-
 <div class="gallery-item">
   <img src="https://lh3.googleusercontent.com/d/1w3x8vXV9JsqKv2wSMtHzziU3qQAjy2vo=w1000" alt="Gallery Image" />
   <p>Your Caption</p>
 </div>
-
 <div class="gallery-item">
   <img src="https://lh3.googleusercontent.com/d/1TAgsVuMwtSt5YolOp2glWcQaYN0y0KXS=w1000" alt="Gallery Image" />
   <p>Your Caption</p>
 </div>
-
 <div class="gallery-item">
   <img src="https://lh3.googleusercontent.com/d/1o5PCmPP2VFJ4qEflr70uHMzIpqJ7sVKC=w1000" alt="Gallery Image" />
   <p>Your Caption</p>
 </div>
-
 <div class="gallery-item">
   <img src="https://lh3.googleusercontent.com/d/1chxdwMsfCB1oHWuEjaBMPeDGEJQ9dWYX=w1000" alt="Gallery Image" />
   <p>Your Caption</p>
 </div>
-
 <div class="gallery-item">
   <img src="https://lh3.googleusercontent.com/d/1jwT-Ad-71Qt6m_UhCiDd2NKo05Q3aEv8=w1000" alt="Gallery Image" />
   <p>Your Caption</p>
 </div>
-
 <div class="gallery-item">
   <img src="https://lh3.googleusercontent.com/d/1p6aCWFzp7zFrRPWOTNy_dQAgWpvQq3je=w1000" alt="Gallery Image" />
   <p>Your Caption</p>
 </div>
-
 <div class="gallery-item">
   <img src="https://lh3.googleusercontent.com/d/1Xd4-eMHhMdLQwxLyTn9cWu1ScKWC-eAz=w1000" alt="Gallery Image" />
   <p>Your Caption</p>
 </div>
-
 <div class="gallery-item">
   <img src="https://lh3.googleusercontent.com/d/12G81eBKrNODz9pAI7ddmfN7IyyiTFTZf=w1000" alt="Gallery Image" />
   <p>Your Caption</p>
 </div>
 </main>
-
 </body>
 </html>
