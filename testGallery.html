@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Test Gallery</title>
   <link rel="icon" href="images/Logo.png" />
+  <link rel="stylesheet" href="style.css" />
   <style>
     body {
       background-color: #2e0000;
@@ -13,109 +13,93 @@
       font-family: 'Georgia', serif;
       margin: 0;
       padding: 0;
+      text-align: center;
       scroll-behavior: smooth;
     }
 
-    .hero {
+    header.hero {
+      background: url('images/IMG_6130.jpg') no-repeat center center/cover;
+      padding: 150px 20px 100px;
       position: relative;
-      height: 100vh;
-      background: url('images/20250515_202755.jpg') no-repeat center center/cover;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      flex-direction: column;
     }
 
-    .hero::after {
+    header.hero::before {
       content: "";
       position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background-color: rgba(0,0,0,0.6);
-      z-index: 1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
     }
 
-    .hero-text {
+    header.hero h1 {
       position: relative;
-      z-index: 2;
-      opacity: 0;
-      transform: translateY(30px);
-      animation: fadeInUp 2s ease forwards 0.3s;
-    }
-
-    .hero-text h1 {
       font-size: 3.5rem;
+      color: white;
       margin: 0;
-      line-height: 1.2;
+      animation: fadeInUp 1.2s ease-out;
     }
 
-    .hero-text .highlight {
+    header.hero .highlight {
       color: #ffc0cb;
       font-weight: bold;
     }
 
     .gallery-name {
-      font-family: 'Courier New', monospace;
-      font-size: 1.6rem;
+      font-size: 2rem;
+      font-weight: bold;
       color: white;
-      border: 2px solid white;
-      padding: 10px 25px;
-      border-radius: 8px;
       display: inline-block;
+      border: 2px solid white;
+      padding: 10px 20px;
       margin-top: 20px;
-      background-color: rgba(0, 0, 0, 0.3);
+      animation: fadeInUp 1.4s ease-out;
     }
 
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .gallery-container {
-      background: #3b0000;
-      padding: 60px 20px;
+    .gallery-wrapper {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 30px;
+      padding: 50px 20px;
+      background-color: #3b0000;
     }
 
     .gallery-item {
-      max-width: 600px;
-      flex: 1 1 300px;
-      border: 3px solid #ffb6c1;
-      border-radius: 12px;
-      overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInImage 1s ease forwards;
+      flex: 1 1 40%;
+      max-width: 800px;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.05);
     }
 
     .gallery-item img {
       width: 100%;
       height: auto;
+      border-radius: 10px;
       display: block;
     }
 
-    .gallery-item:hover {
-      transform: scale(1.03);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    .gallery-item p {
+      font-size: 1.6rem;
+      margin-top: 12px;
+      color: #ffc0cb;
+      font-weight: bold;
+      text-align: center;
     }
 
-    @keyframes fadeInImage {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    .note {
+      margin-top: 40px;
+      font-size: 1rem;
+      color: #ffb6c1;
     }
 
     .back-button {
-      display: block;
-      margin: 40px auto;
+      display: inline-block;
+      margin: 40px 0 20px;
       padding: 12px 24px;
       background-color: #800000;
       color: white;
@@ -123,25 +107,50 @@
       border-radius: 8px;
       font-weight: bold;
       transition: background 0.3s;
-      width: fit-content;
     }
 
     .back-button:hover {
       background-color: #a00000;
     }
+
+    @media (max-width: 768px) {
+      .gallery-item {
+        flex: 1 1 90%;
+      }
+
+      header.hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .gallery-name {
+        font-size: 1.5rem;
+        padding: 6px 14px;
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
   </style>
 </head>
 <body>
-  <section class="hero">
-    <div class="hero-text">
-      <h1><span style="color: white;">WELCOME TO</span> <span class="highlight">YOUR GALLERY</span></h1>
-      <div class="gallery-name">Test Gallery</div>
-    </div>
-  </section>
+  <header class="hero">
+    <h1>Welcome to <span class="highlight">Your Gallery</span></h1>
+    <div class="gallery-name">Gallery Name</div>
+  </header>
 
   <main>
-    <section class="gallery-container">
-      <div class="gallery-item">
+    <div class="gallery-wrapper">
+      <!-- Sample gallery items (replace/add more as needed) -->
+      
+        <div class="gallery-item">
   <img src="https://lh3.googleusercontent.com/d/1FQMkVH5xeNtlF52HqFJG1HytytK5Gbbl=w1000" alt="Gallery Image" />
   <p>Your Caption</p>
 </div>
@@ -226,7 +235,10 @@
   <p>Your Caption</p>
 </div>
 
-    </section>
+
+    </div>
+
+    <p class="note">Click on an image to view or download.</p>
     <a href="index.html" class="back-button">← Back to Home</a>
   </main>
 </body>
