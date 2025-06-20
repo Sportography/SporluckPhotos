@@ -58,6 +58,30 @@
     .home-button:hover, .copy-button:hover {
       background-color: #a00000;
     }
+
+    /* Optional preview styling */
+    .gallery-box {
+      background-color: #3a0000;
+      padding: 15px;
+      margin-bottom: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s ease;
+    }
+    .gallery-box:hover {
+      transform: scale(1.02);
+    }
+    .gallery-box img {
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+    .gallery-box p {
+      margin: 0;
+      font-size: 1.1rem;
+      color: #ffb6c1;
+      font-weight: bold;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
@@ -75,23 +99,25 @@
     function convertLinks() {
       const input = document.getElementById("driveLinks").value.trim();
       const links = input.split(/\n|,/).map(link => link.trim()).filter(link => link.length > 0);
-      let col1 = "<div class=\"gallery-column\">\n";
-      let col2 = "<div class=\"gallery-column\">\n";
+      let col1 = '<div class="gallery-column">\n';
+      let col2 = '<div class="gallery-column">\n';
 
       links.forEach((link, index) => {
         const match = link.match(/\/d\/([\w-]{20,})/);
         if (match) {
           const id = match[1];
-          const block = `  <img src=\"https://lh3.googleusercontent.com/d/${id}=w1000\" alt=\"Gallery Image\" />\n  <p>Your Caption</p>\n`;
-          if (index % 2 === 0) col1 += block + "\n";
-          else col2 += block + "\n";
+          const block = `  <div class="gallery-box">\n` +
+                        `    <img src="https://lh3.googleusercontent.com/d/${id}=w1000" alt="Gallery Image" />\n` +
+                        `    <p>Your Caption</p>\n  </div>\n`;
+          if (index % 2 === 0) col1 += block;
+          else col2 += block;
         }
       });
 
-      col1 += "</div>";
-      col2 += "</div>";
+      col1 += '</div>';
+      col2 += '</div>';
 
-      document.getElementById("result").textContent = `<main id=\"photos\">\n${col1}\n\n${col2}\n</main>`;
+      document.getElementById("result").textContent = `<main id="photos">\n${col1}\n\n${col2}\n</main>`;
     }
 
     function copyCode() {
