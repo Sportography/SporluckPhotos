@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Google Drive Embed Helper</title>
+  <title>Gallery Block Generator</title>
   <link rel="icon" href="images/Logo.png">
   <style>
     body {
@@ -13,7 +13,7 @@
       padding: 40px;
       text-align: center;
     }
-    textarea, input[type=text] {
+    textarea {
       width: 90%;
       max-width: 800px;
       padding: 10px;
@@ -48,10 +48,10 @@
   </style>
 </head>
 <body>
-  <h1>🔧 Google Drive Embed Code Generator</h1>
-  <p>Paste one or more Google Drive file links below:</p>
-  <textarea id="driveLinks" rows="6" placeholder="Paste your Drive links here..."></textarea><br>
-  <button onclick="convertLinks()">Generate Embed Code</button>
+  <h1>📸 Gallery Embed Code Generator</h1>
+  <p>Paste Google Drive links (one per line):</p>
+  <textarea id="driveLinks" rows="6" placeholder="Paste links here..."></textarea><br>
+  <button onclick="convertLinks()">Generate Gallery Blocks</button>
 
   <div id="result" class="output"></div>
 
@@ -61,13 +61,16 @@
       const links = input.split(/\n|,/).map(link => link.trim()).filter(link => link.length > 0);
       let output = "";
 
-      for (let link of links) {
+      for (let i = 0; i < links.length; i++) {
+        const link = links[i];
         const match = link.match(/\/d\/([\w-]{20,})/);
         if (match) {
           const fileId = match[1];
-          output += `<img src=\"https://drive.google.com/uc?export=view&id=${fileId}\" alt=\"Drive Image\" />\n`;
+          output += `<div class="gallery-item">\n` +
+                    `  <img src="https://drive.google.com/uc?export=view&id=${fileId}" alt="Gallery Image" />\n` +
+                    `  <p>Your Caption</p>\n</div>\n\n`;
         } else {
-          output += `⚠️ Invalid link: ${link}\n`;
+          output += `⚠️ Invalid link: ${link}\n\n`;
         }
       }
 
