@@ -116,13 +116,50 @@
     @keyframes fadeIn {
       to { opacity: 1; }
     }
+  
+    .gallery-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 40px 20px;
+    }
+
+    .gallery-item {
+      flex: 1 1 300px;
+      max-width: 400px;
+      margin: 0;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+    }
+
+  
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 40px 20px;
+    }
+
+    .gallery-item {
+      margin: 0;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+    }
+
   </style>
 </head>
 <body>
 
 <header class="hero">
   <h1>Welcome to <span class="highlight">YOUR GALLERY</span></h1>
-  <div class="gallery-title">Test Gallery</div>
+  <div class="gallery-title">Gallery Name Here</div>
   <div class="scroll-reminder">
     See your photos below
     <br />
@@ -131,6 +168,7 @@
 </header>
 
 <main id="photos">
+  <div class="gallery-grid">
 <div class="gallery-item">
   <img src="https://lh3.googleusercontent.com/d/1FQMkVH5xeNtlF52HqFJG1HytytK5Gbbl=w1000" alt="Gallery Image" />
   <p>Your Caption</p>
@@ -199,6 +237,7 @@
   <img src="https://lh3.googleusercontent.com/d/12G81eBKrNODz9pAI7ddmfN7IyyiTFTZf=w1000" alt="Gallery Image" />
   <p>Your Caption</p>
 </div>
+  </div>
 </main>
 </body>
 </html>
