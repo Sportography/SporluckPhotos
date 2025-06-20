@@ -20,11 +20,12 @@
       text-align: center;
     }
 
+    
     header.hero {
       background-image: url('images/IMG_0824-Enhanced-NR.jpg');
       background-size: cover;
       background-position: center;
-      height: 100vh;
+      height: 110vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -33,6 +34,7 @@
       position: relative;
       text-align: center;
     }
+    
 
     .hero h1 {
       font-size: 3.6rem;
@@ -89,12 +91,15 @@
       padding: 60px 5vw;
     }
 
+    
     .gallery-grid {
       display: flex;
-      gap: 30px;
+      gap: 40px;
       justify-content: center;
       align-items: flex-start;
+      padding: 60px 8vw;
     }
+    
 
     .gallery-column {
       display: flex;
@@ -103,14 +108,19 @@
       flex: 1;
     }
 
+    
     .gallery-item img {
       width: 100%;
+      max-width: 600px;
       height: auto;
       border-radius: 12px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.6);
       transition: transform 0.4s ease;
       display: block;
+      margin-left: auto;
+      margin-right: auto;
     }
+    
 
     .gallery-item img:hover {
       transform: scale(1.04);
@@ -138,9 +148,19 @@
       animation: fadeInUp 0.6s ease both;
     }
 
+    
     .gallery-item img {
-      animation: fadeInUp 0.6s ease both;
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+      transition: transform 0.4s ease;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
     }
+    
 
     .gallery-item p {
       font-size: 1.4rem;
@@ -168,7 +188,7 @@
 
 <header class="hero">
   <h1>Welcome to <span class="highlight">YOUR GALLERY</span></h1>
-  <div class="gallery-title">Gallery RAHHH</div>
+  <div class="gallery-title">Gallery TEST</div>
   <div class="scroll-reminder">
     See your photos below
     <br />
@@ -252,5 +272,9 @@
   </div>
 </div>
 </main>
+
+  <footer style="margin: 60px 0 40px;">
+    <a href="index.html" style="background:#800000; color:white; padding:14px 28px; border-radius:8px; text-decoration:none; font-weight:bold;">← Back to Home</a>
+  </footer>
 </body>
 </html>
