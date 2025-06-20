@@ -137,13 +137,46 @@
       height: auto;
     }
 
+  
+    .gallery-grid {
+      column-count: 2;
+      column-gap: 30px;
+      padding: 40px 10vw;
+    }
+
+    .gallery-item {
+      break-inside: avoid;
+      margin-bottom: 30px;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+      transition: transform 0.4s ease;
+    }
+
+    .gallery-item img:hover {
+      transform: scale(1.04);
+    }
+
+    .gallery-item p {
+      font-size: 1.2rem;
+      color: #ffb6c1;
+      margin-top: 10px;
+      font-weight: bold;
+      text-align: center;
+    }
+
   </style>
 </head>
 <body>
 
 <header class="hero">
   <h1>Welcome to <span class="highlight">YOUR GALLERY</span></h1>
-  <div class="gallery-title">Gallery Example</div>
+  <div class="gallery-title">Gallery Name Here</div>
   <div class="scroll-reminder">
     See your photos below
     <br />
