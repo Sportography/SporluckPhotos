@@ -93,6 +93,7 @@ document.getElementById("codeAccessForm").addEventListener("submit", function (e
     jeena25: "jeena25.html",
     alexg: "alexg.html",
     test123: "testGallery.html",
+    gdhelpme: "driveHelper.html" 
     // Add more codes here
   };
 

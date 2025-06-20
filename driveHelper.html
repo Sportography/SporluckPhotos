@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Drive Embed Helper</title>
+  <link rel="icon" href="images/Logo.png">
+  <style>
+    body {
+      background-color: #2e0000;
+      color: white;
+      font-family: 'Georgia', serif;
+      padding: 40px;
+      text-align: center;
+    }
+    textarea, input[type=text] {
+      width: 90%;
+      max-width: 800px;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      margin: 20px 0;
+      font-size: 1rem;
+    }
+    button {
+      background-color: #800000;
+      color: white;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #a00000;
+    }
+    .output {
+      margin-top: 30px;
+      white-space: pre-wrap;
+      background: #1e0000;
+      padding: 20px;
+      border-radius: 8px;
+      width: 90%;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔧 Google Drive Embed Code Generator</h1>
+  <p>Paste one or more Google Drive file links below:</p>
+  <textarea id="driveLinks" rows="6" placeholder="Paste your Drive links here..."></textarea><br>
+  <button onclick="convertLinks()">Generate Embed Code</button>
+
+  <div id="result" class="output"></div>
+
+  <script>
+    function convertLinks() {
+      const input = document.getElementById("driveLinks").value.trim();
+      const links = input.split(/\n|,/).map(link => link.trim()).filter(link => link.length > 0);
+      let output = "";
+
+      for (let link of links) {
+        const match = link.match(/\/d\/([\w-]{20,})/);
+        if (match) {
+          const fileId = match[1];
+          output += `<img src=\"https://drive.google.com/uc?export=view&id=${fileId}\" alt=\"Drive Image\" />\n`;
+        } else {
+          output += `⚠️ Invalid link: ${link}\n`;
+        }
+      }
+
+      document.getElementById("result").textContent = output;
+    }
+  </script>
+</body>
+</html>
