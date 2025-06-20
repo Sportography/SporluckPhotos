@@ -13,33 +13,64 @@
       font-family: 'Georgia', serif;
       margin: 0;
       padding: 0;
-      text-align: center;
       scroll-behavior: smooth;
     }
-    header.hero {
-      background-color: #3b0000;
-      padding: 60px 20px 30px;
+
+    .hero {
+      position: relative;
+      height: 100vh;
+      background: url('images/gallery-banner.jpg') no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
     }
-    .cover-img {
-      width: 90%;
-      max-width: 1000px;
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-      margin-bottom: 30px;
-      transition: transform 0.4s ease;
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.6);
+      z-index: 1;
     }
-    .cover-img:hover {
-      transform: scale(1.02);
+
+    .hero-text {
+      position: relative;
+      z-index: 2;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 2s ease forwards 0.3s;
     }
-    h1 {
-      font-size: 2.5rem;
+
+    .hero-text h1 {
+      font-size: 3.5rem;
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    .hero-text .highlight {
       color: #ffc0cb;
-      margin-bottom: 20px;
-      animation: fadeInUp 1s ease-out;
+      font-weight: bold;
     }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .gallery-wrapper {
+      padding: 60px 20px;
+      background-color: #3b0000;
+      display: flex;
+      justify-content: center;
+    }
+
     iframe {
-      width: 90%;
-      height: 80vh;
+      width: 95%;
+      height: 85vh;
       border: none;
       border-radius: 12px;
       box-shadow: 0 0 20px rgba(0,0,0,0.6);
@@ -47,18 +78,22 @@
       transform: translateY(30px);
       transition: all 1s ease-out;
     }
+
     iframe.visible {
       opacity: 1;
       transform: translateY(0);
     }
+
     .note {
       margin-top: 20px;
+      text-align: center;
       color: #ffb6c1;
       font-size: 1rem;
     }
+
     .back-button {
-      display: inline-block;
-      margin: 40px 0 20px;
+      display: block;
+      margin: 40px auto;
       padding: 12px 24px;
       background-color: #800000;
       color: white;
@@ -66,63 +101,32 @@
       border-radius: 8px;
       font-weight: bold;
       transition: background 0.3s;
+      width: fit-content;
     }
+
     .back-button:hover {
       background-color: #a00000;
-    }
-    .highlights {
-      background-color: #3b0000;
-      padding: 20px 10px;
-      overflow-x: hidden;
-    }
-    .scroll-track {
-      display: flex;
-      gap: 20px;
-      animation: scrollLeft 30s linear infinite;
-    }
-    .scroll-track img {
-      height: 300px;
-      width: 300px;
-      object-fit: cover;
-      border-radius: 12px;
-      flex-shrink: 0;
-    }
-    @keyframes scrollLeft {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
-  <header class="hero">
-    <h1>Welcome to Your Gallery</h1>
-    <img src="https://drive.google.com/uc?export=view&id=186R66Ne7h8UwzL2SoNbutlMuHLzrsOr2" alt="Cover Image" class="cover-img" />
-  </header>
-
-  <section class="highlights">
-    <div class="scroll-track">
-      <img src="https://drive.google.com/uc?export=view&id=186R66Ne7h8UwzL2SoNbutlMuHLzrsOr2" alt="Highlight 1" />
-      <img src="https://drive.google.com/uc?export=view&id=186R66Ne7h8UwzL2SoNbutlMuHLzrsOr2" alt="Highlight 2" />
-      <img src="https://drive.google.com/uc?export=view&id=186R66Ne7h8UwzL2SoNbutlMuHLzrsOr2" alt="Highlight 3" />
-      <img src="https://drive.google.com/uc?export=view&id=186R66Ne7h8UwzL2SoNbutlMuHLzrsOr2" alt="Highlight 4" />
-      <img src="https://drive.google.com/uc?export=view&id=186R66Ne7h8UwzL2SoNbutlMuHLzrsOr2" alt="Highlight 5" />
-      <img src="https://drive.google.com/uc?export=view&id=186R66Ne7h8UwzL2SoNbutlMuHLzrsOr2" alt="Highlight 6" />
+  <section class="hero">
+    <div class="hero-text">
+      <h1><span style="color: white;">WELCOME TO</span> <span class="highlight">YOUR GALLERY</span></h1>
     </div>
   </section>
 
   <main>
     <div class="gallery-wrapper">
       <iframe id="galleryFrame" src="https://drive.google.com/embeddedfolderview?id=1CoG1yHIwyAQWT5SOaon84eQz8nODWhsq#grid"></iframe>
-      <p class="note">Click on an image to view or download. Only files in this folder will appear here.</p>
-      <a href="index.html" class="back-button">← Back to Home</a>
     </div>
+
+    <p class="note">Click on an image to view or download. Only files in this folder will appear here.</p>
+    <a href="index.html" class="back-button">← Back to Home</a>
   </main>
 
   <script>
+    const iframe = document.getElementById('galleryFrame');
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -133,7 +137,6 @@
     }, {
       threshold: 0.1
     });
-    const iframe = document.getElementById('galleryFrame');
     observer.observe(iframe);
   </script>
 </body>
