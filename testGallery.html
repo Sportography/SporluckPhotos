@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Test Gallery</title>
   <link rel="icon" href="images/Logo.png" />
+  <link rel="stylesheet" href="style.css" />
   <style>
     body {
       background-color: #2e0000;
@@ -29,7 +29,7 @@
     }
 
     .hero h1 {
-      font-size: 3rem;
+      font-size: 3.4rem;
       color: white;
       margin: 0;
       animation: fadeInUp 1.2s ease-out forwards;
@@ -41,12 +41,12 @@
     }
 
     .gallery-title {
-      font-size: 1.6rem;
+      font-size: 1.8rem;
       color: white;
       border: 2px solid white;
       display: inline-block;
-      padding: 10px 20px;
-      margin-top: 20px;
+      padding: 10px 25px;
+      margin-top: 25px;
       font-weight: bold;
     }
 
@@ -85,11 +85,10 @@
       gap: 30px;
       justify-content: center;
       align-items: flex-start;
-      flex-wrap: wrap;
     }
 
     .gallery-column {
-      flex: 0 0 54%;
+      flex: 0 0 48%;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -97,7 +96,8 @@
 
     .gallery-column img {
       width: 100%;
-      margin-bottom: 30px;
+      height: auto;
+      margin-bottom: 20px;
       border-radius: 12px;
       transition: transform 0.3s ease;
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);

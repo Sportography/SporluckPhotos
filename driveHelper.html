@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gallery Block Generator</title>
+  <title>Gallery Embed Generator</title>
   <link rel="icon" href="images/Logo.png">
   <style>
     body {
@@ -48,13 +47,13 @@
     }
     .home-button, .copy-button {
       display: inline-block;
-      margin: 20px 10px;
       background-color: #800000;
       color: white;
       padding: 10px 20px;
       border-radius: 5px;
       text-decoration: none;
       font-weight: bold;
+      margin: 10px;
     }
     .home-button:hover, .copy-button:hover {
       background-color: #a00000;
@@ -62,12 +61,13 @@
   </style>
 </head>
 <body>
-  <h1>📸 Gallery Embed Code Generator</h1>
-  <p>Paste Google Drive links (one per line):</p>
-  <textarea id="driveLinks" rows="6" placeholder="Paste links here..."></textarea><br>
-  <button onclick="convertLinks()">Generate Gallery Blocks</button>
+  <h1>📸 Gallery Embed Code Generator (Two Columns)</h1>
   <a href="index.html" class="home-button">← Back to Home</a>
-  <button class="copy-button" onclick="copyToClipboard()">📋 Copy Code</button>
+  <a class="copy-button" onclick="copyCode()">Copy Output</a>
+
+  <p>Paste Google Drive links (one per line):</p>
+  <textarea id="driveLinks" rows="8" placeholder="Paste links here..."></textarea><br>
+  <button onclick="convertLinks()">Generate 2-Column Gallery Code</button>
 
   <div id="result" class="output"></div>
 
@@ -75,31 +75,28 @@
     function convertLinks() {
       const input = document.getElementById("driveLinks").value.trim();
       const links = input.split(/\n|,/).map(link => link.trim()).filter(link => link.length > 0);
-      let output = "";
+      let col1 = "<div class=\"gallery-column\">\n";
+      let col2 = "<div class=\"gallery-column\">\n";
 
-      for (let i = 0; i < links.length; i++) {
-        const link = links[i];
+      links.forEach((link, index) => {
         const match = link.match(/\/d\/([\w-]{20,})/);
         if (match) {
-          const fileId = match[1];
-          output += `<div class="gallery-item">\n` +
-                    `  <img src="https://lh3.googleusercontent.com/d/${fileId}=w1000" alt="Gallery Image" />\n` +
-                    `  <p>Your Caption</p>\n</div>\n\n`;
-        } else {
-          output += `⚠️ Invalid link: ${link}\n\n`;
+          const id = match[1];
+          const block = `  <img src=\"https://lh3.googleusercontent.com/d/${id}=w1000\" alt=\"Gallery Image\" />\n  <p>Your Caption</p>\n`;
+          if (index % 2 === 0) col1 += block + "\n";
+          else col2 += block + "\n";
         }
-      }
+      });
 
-      document.getElementById("result").textContent = output;
+      col1 += "</div>";
+      col2 += "</div>";
+
+      document.getElementById("result").textContent = `<main id=\"photos\">\n${col1}\n\n${col2}\n</main>`;
     }
 
-    function copyToClipboard() {
-      const output = document.getElementById("result").textContent;
-      navigator.clipboard.writeText(output).then(() => {
-        alert("Gallery code copied to clipboard!");
-      }, () => {
-        alert("Failed to copy text.");
-      });
+    function copyCode() {
+      const text = document.getElementById("result").textContent;
+      navigator.clipboard.writeText(text).then(() => alert("Copied!"));
     }
   </script>
 </body>
