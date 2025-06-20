@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Client Gallery</title>
+  <title>Test Gallery</title>
   <link rel="icon" href="images/Logo.png" />
   <style>
     body {
@@ -19,11 +19,12 @@
     .hero {
       position: relative;
       height: 100vh;
-      background: url('images/IMG_0824-Enhanced-NR.jpg') no-repeat center center/cover;
+      background: url('images/gallery-banner.jpg') no-repeat center center/cover;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
+      flex-direction: column;
     }
 
     .hero::after {
@@ -54,6 +55,18 @@
       font-weight: bold;
     }
 
+    .gallery-name {
+      font-family: 'Courier New', monospace;
+      font-size: 1.6rem;
+      color: white;
+      border: 2px solid white;
+      padding: 10px 25px;
+      border-radius: 8px;
+      display: inline-block;
+      margin-top: 20px;
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+
     @keyframes fadeInUp {
       to {
         opacity: 1;
@@ -61,34 +74,43 @@
       }
     }
 
-    .gallery-wrapper {
+    .gallery-container {
+      background: #3b0000;
       padding: 60px 20px;
-      background-color: #3b0000;
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
+      gap: 30px;
     }
 
-    iframe {
-      width: 95%;
-      height: 85vh;
-      border: none;
+    .gallery-item {
+      max-width: 600px;
+      flex: 1 1 300px;
+      border: 3px solid #ffb6c1;
       border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.6);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
       opacity: 0;
-      transform: translateY(30px);
-      transition: all 1s ease-out;
+      transform: translateY(20px);
+      animation: fadeInImage 1s ease forwards;
     }
 
-    iframe.visible {
-      opacity: 1;
-      transform: translateY(0);
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      display: block;
     }
 
-    .note {
-      margin-top: 20px;
-      text-align: center;
-      color: #ffb6c1;
-      font-size: 1rem;
+    .gallery-item:hover {
+      transform: scale(1.03);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    }
+
+    @keyframes fadeInImage {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .back-button {
@@ -113,31 +135,17 @@
   <section class="hero">
     <div class="hero-text">
       <h1><span style="color: white;">WELCOME TO</span> <span class="highlight">YOUR GALLERY</span></h1>
+      <div class="gallery-name">Test Gallery</div>
     </div>
   </section>
 
   <main>
-    <div class="gallery-wrapper">
-      <iframe id="galleryFrame" src="https://drive.google.com/embeddedfolderview?id=1CoG1yHIwyAQWT5SOaon84eQz8nODWhsq#grid"></iframe>
-    </div>
-
-    <p class="note">Click on an image to view or download. Only files in this folder will appear here.</p>
+    <section class="gallery-container">
+      <div class="gallery-item"><img src="https://drive.google.com/uc?export=view&id=186R66Ne7h8UwzL2SoNbutlMuHLzrsOr2" alt="Gallery Image 1" /></div>
+      <div class="gallery-item"><img src="https://drive.google.com/uc?export=view&id=1CoG1yHIwyAQWT5SOaon84eQz8nODWhsq" alt="Gallery Image 2" /></div>
+      <div class="gallery-item"><img src="https://drive.google.com/uc?export=view&id=1uKzW9gNtoM7q6nR5fMtXihL4FA7W2HRz" alt="Gallery Image 3" /></div>
+    </section>
     <a href="index.html" class="back-button">← Back to Home</a>
   </main>
-
-  <script>
-    const iframe = document.getElementById('galleryFrame');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, {
-      threshold: 0.1
-    });
-    observer.observe(iframe);
-  </script>
 </body>
 </html>
