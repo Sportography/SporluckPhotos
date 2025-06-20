@@ -168,8 +168,17 @@ img {
   }
 }
 
-/* Gallery */
-
+/* Gallery Mobile Patch */
+@media (max-width: 768px) {
+  .gallery-column {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    padding: 0 5vw;
+  }
+  .gallery-box img {
+    max-height: 80vh;
+  }
+}
 
 /* Gallery Section */
 .gallery-container {
