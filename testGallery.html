@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Test Gallery</title>
   <link rel="icon" href="images/Logo.png" />
-  <link rel="stylesheet" href="style.css" />
   <style>
     body {
       background-color: #2e0000;
@@ -29,7 +29,7 @@
     }
 
     .hero h1 {
-      font-size: 3.4rem;
+      font-size: 3rem;
       color: white;
       margin: 0;
       animation: fadeInUp 1.2s ease-out forwards;
@@ -41,12 +41,12 @@
     }
 
     .gallery-title {
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       color: white;
       border: 2px solid white;
       display: inline-block;
-      padding: 10px 25px;
-      margin-top: 25px;
+      padding: 10px 20px;
+      margin-top: 20px;
       font-weight: bold;
     }
 
@@ -85,19 +85,20 @@
       gap: 30px;
       justify-content: center;
       align-items: flex-start;
+      flex-wrap: wrap;
     }
 
     .gallery-column {
-      flex: 0 0 48%;
       display: flex;
       flex-direction: column;
       align-items: center;
+      width: 100%;
     }
 
     .gallery-column img {
-      width: 100%;
-      height: auto;
-      margin-bottom: 20px;
+      width: 90%;
+      max-width: 640px;
+      margin-bottom: 30px;
       border-radius: 12px;
       transition: transform 0.3s ease;
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
@@ -149,7 +150,6 @@
       }
 
       .gallery-column {
-        flex: 0 0 100%;
         width: 90%;
       }
     }
@@ -159,7 +159,7 @@
 
 <header class="hero">
   <h1>Welcome to <span class="highlight">YOUR GALLERY</span></h1>
-  <div class="gallery-title">Gallery Name Here</div>
+  <div class="gallery-title">Galleries Test</div>
   <div class="scroll-reminder">
     See your photos below
     <br />
@@ -177,9 +177,6 @@
     <p>Your Caption</p>
     <img src="https://lh3.googleusercontent.com/d/1oRq8sHSKlLnLMDkrbagux--uM-3RwCA_=w1000" alt="Gallery Image" />
     <p>Your Caption</p>
-  </div>
-
-  <div class="gallery-column">
     <img src="https://lh3.googleusercontent.com/d/179AGUw5J1skGrbSX2Yl8zofikSYzm8NA=w1000" alt="Gallery Image" />
     <p>Your Caption</p>
     <img src="https://lh3.googleusercontent.com/d/1nAVI1WIH_0cegxC-XN7DUNX5K5NA__Wz=w1000" alt="Gallery Image" />
