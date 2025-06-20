@@ -46,18 +46,17 @@
       margin-left: auto;
       margin-right: auto;
     }
-    .home-button {
+    .home-button, .copy-button {
       display: inline-block;
-      margin: 20px auto;
+      margin: 20px 10px;
       background-color: #800000;
       color: white;
       padding: 10px 20px;
       border-radius: 5px;
       text-decoration: none;
       font-weight: bold;
-      text-align: center;
     }
-    .home-button:hover {
+    .home-button:hover, .copy-button:hover {
       background-color: #a00000;
     }
   </style>
@@ -67,8 +66,9 @@
   <p>Paste Google Drive links (one per line):</p>
   <textarea id="driveLinks" rows="6" placeholder="Paste links here..."></textarea><br>
   <button onclick="convertLinks()">Generate Gallery Blocks</button>
-
   <a href="index.html" class="home-button">← Back to Home</a>
+  <button class="copy-button" onclick="copyToClipboard()">📋 Copy Code</button>
+
   <div id="result" class="output"></div>
 
   <script>
@@ -91,6 +91,15 @@
       }
 
       document.getElementById("result").textContent = output;
+    }
+
+    function copyToClipboard() {
+      const output = document.getElementById("result").textContent;
+      navigator.clipboard.writeText(output).then(() => {
+        alert("Gallery code copied to clipboard!");
+      }, () => {
+        alert("Failed to copy text.");
+      });
     }
   </script>
 </body>
