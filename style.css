@@ -616,6 +616,13 @@ button:hover {
     max-width: calc(25% - 30px);
   }
 }
+@media (min-width: 1200px) {
+  .gallery-column.four-col .gallery-box img {
+    transform: scale(0.9);
+    transform-origin: center;
+  }
+}
+
 
 /* GALLERY BOXES */
 .gallery-box {
@@ -644,17 +651,4 @@ button:hover {
   font-size: 1.1rem;
   color: #ffb6c1; /* Maroon/pink caption */
   font-weight: bold;
-}
-
-.gallery-direct-page .background-image {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
-  opacity: 0.15;
-  z-index: -1;
-  background-image: url('images/ringMonument.jpg');
 }
