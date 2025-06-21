@@ -612,9 +612,11 @@ button:hover {
 
 @media (min-width: 1200px) {
   .gallery-column.four-col {
-    max-width: 25%;
+    flex: 1 1 calc(25% - 30px);
+    max-width: calc(25% - 30px);
   }
 }
+
 
 /* GALLERY BOXES */
 .gallery-box {
