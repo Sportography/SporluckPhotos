@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Client Gallery</title> <!--This is the tab name-->
+  <title>Client Gallery</title>
   <link rel="icon" href="images/Logo.png" />
   <style>
     body {
@@ -16,7 +16,7 @@
     }
 
     header.hero {
-      background-image: url('images/IMG_0824-Enhanced-NR.jpg'); /*This is the BG PHOTO*/
+      background-image: url('images/IMG_0824-Enhanced-NR.jpg');
       background-size: cover;
       background-position: center;
       height: 100vh;
@@ -76,7 +76,7 @@
 
     .scroll-arrow span {
       font-size: 2rem;
-      color: maroon;
+      color: rgb(128, 0, 0);
     }
 
     main#photos {
@@ -98,7 +98,7 @@
     }
 
     .gallery-box {
-      background-color: #3a3232;
+      background-color: #424242;
       padding: 15px;
       margin-bottom: 30px;
       border-radius: 12px;
@@ -111,9 +111,9 @@
     }
 
     .gallery-box img {
+      width: 100%;
       border-radius: 8px;
       margin-bottom: 10px;
-      width: 100%;
     }
 
     .gallery-box p {
@@ -155,11 +155,21 @@
       main#photos {
         flex-direction: column;
         align-items: center;
+        padding-left: 20px;
+        padding-right: 20px;
       }
 
       .gallery-column {
         flex: 0 0 100%;
-        width: 90%;
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+        margin: 0;
+      }
+
+      .gallery-box {
+        margin-left: 10px;
+        margin-right: 10px;
       }
     }
   </style>
@@ -167,8 +177,8 @@
 <body>
 
 <header class="hero">
-  <h1>Welcome to <span class="highlight">YOUR GALLERY</span></h1> <!--Here is all the words on the page-->
-  <div class="gallery-title">[Gallery Title Placeholder]</div>
+  <h1>Welcome to <span class="highlight">YOUR GALLERY</span></h1>
+  <div class="gallery-title">Gallery Title Placeholder</div>
   <div class="scroll-reminder">
     See your photos below
     <br />
@@ -176,12 +186,21 @@
   </div>
 </header>
 
-<main id="photos"> <!--USE THE gdhelpme CODE-->
+<main id="photos">
   <div class="gallery-column">
-    <!-- Column 1 placeholder images -->
+    <!-- Column 1 placeholder -->
+    <div class="gallery-box">
+      <img src="https://via.placeholder.com/800x600" alt="Placeholder Image" />
+      <p>Caption Placeholder</p>
+    </div>
   </div>
+
   <div class="gallery-column">
-    <!-- Column 2 placeholder images -->
+    <!-- Column 2 placeholder -->
+    <div class="gallery-box">
+      <img src="https://via.placeholder.com/800x600" alt="Placeholder Image" />
+      <p>Caption Placeholder</p>
+    </div>
   </div>
 </main>
 

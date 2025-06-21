@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gallery Embed Generator</title>
-  <link rel="icon" href="images/Logo.png">
+  <link rel="icon" href="images/Logo.png" />
   <style>
     body {
       background-color: #2e0000;
@@ -13,7 +13,8 @@
       padding: 40px;
       text-align: center;
     }
-    textarea {
+
+    textarea, select {
       width: 90%;
       max-width: 800px;
       padding: 10px;
@@ -22,6 +23,7 @@
       margin: 20px 0;
       font-size: 1rem;
     }
+
     button {
       background-color: #800000;
       color: white;
@@ -31,9 +33,11 @@
       border-radius: 5px;
       cursor: pointer;
     }
+
     button:hover {
       background-color: #a00000;
     }
+
     .output {
       margin-top: 30px;
       white-space: pre-wrap;
@@ -45,6 +49,7 @@
       margin-left: auto;
       margin-right: auto;
     }
+
     .home-button, .copy-button {
       display: inline-block;
       background-color: #800000;
@@ -55,53 +60,41 @@
       font-weight: bold;
       margin: 10px;
     }
+
     .home-button:hover, .copy-button:hover {
       background-color: #a00000;
-    }
-
-    /* Optional preview styling */
-    .gallery-box {
-      background-color: #3a0000;
-      padding: 15px;
-      margin-bottom: 30px;
-      border-radius: 12px;
-      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.5);
-      transition: transform 0.3s ease;
-    }
-    .gallery-box:hover {
-      transform: scale(1.02);
-    }
-    .gallery-box img {
-      border-radius: 8px;
-      margin-bottom: 10px;
-    }
-    .gallery-box p {
-      margin: 0;
-      font-size: 1.1rem;
-      color: #ffb6c1;
-      font-weight: bold;
-      text-align: center;
     }
   </style>
 </head>
 <body>
-  <h1>📸 Gallery Embed Code Generator (Two Columns)</h1>
+
+  <h1>📸 Gallery Embed Code Generator</h1>
   <a href="index.html" class="home-button">← Back to Home</a>
   <a class="copy-button" onclick="copyCode()">Copy Output</a>
 
   <p>Paste Google Drive links (one per line):</p>
   <textarea id="driveLinks" rows="8" placeholder="Paste links here..."></textarea><br>
-  <button onclick="convertLinks()">Generate 2-Column Gallery Code</button>
+
+  <label for="columnSelect">Select number of columns:</label><br>
+  <select id="columnSelect">
+    <option value="1">1 Column</option>
+    <option value="2" selected>2 Columns</option>
+    <option value="3">3 Columns</option>
+    <option value="4">4 Columns</option>
+  </select><br>
+
+  <button onclick="convertLinks()">Generate Gallery Code</button>
 
   <div id="result" class="output"></div>
 
   <script>
     function convertLinks() {
       const input = document.getElementById("driveLinks").value.trim();
+      const columnCount = parseInt(document.getElementById("columnSelect").value);
       const links = input.split(/\n|,/).map(link => link.trim()).filter(link => link.length > 0);
-      let col1 = '<div class="gallery-column">\n';
-      let col2 = '<div class="gallery-column">\n';
+      const columns = Array.from({ length: columnCount }, () => []);
 
+      // Distribute links across columns
       links.forEach((link, index) => {
         const match = link.match(/\/d\/([\w-]{20,})/);
         if (match) {
@@ -109,15 +102,22 @@
           const block = `  <div class="gallery-box">\n` +
                         `    <img src="https://lh3.googleusercontent.com/d/${id}=w1000" alt="Gallery Image" />\n` +
                         `    <p>Your Caption</p>\n  </div>\n`;
-          if (index % 2 === 0) col1 += block;
-          else col2 += block;
+          columns[index % columnCount].push(block);
         }
       });
 
-      col1 += '</div>';
-      col2 += '</div>';
+      // Generate HTML
+      let result = `<main id="photos">\n`;
+      columns.forEach(col => {
+        result += `  <div class="gallery-column">\n`;
+        col.forEach(item => {
+          result += item;
+        });
+        result += `  </div>\n\n`;
+      });
+      result += `</main>`;
 
-      document.getElementById("result").textContent = `<main id="photos">\n${col1}\n\n${col2}\n</main>`;
+      document.getElementById("result").textContent = result;
     }
 
     function copyCode() {
@@ -125,5 +125,6 @@
       navigator.clipboard.writeText(text).then(() => alert("Copied!"));
     }
   </script>
+
 </body>
 </html>

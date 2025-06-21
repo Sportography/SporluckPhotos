@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Choose a Gallery</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Georgia', serif;
+      background-color: #1a0000;
+      color: white;
+      text-align: center;
+    }
+
+    .fade-title {
+      font-size: 2em;
+      margin-top: 50px;
+      opacity: 0;
+      animation: fadeIn 2s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    .gallery-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      margin: 60px auto;
+      max-width: 90%;
+    }
+
+    .gallery-card {
+      position: relative;
+      width: 90%;
+      max-width: 700px;
+      height: 200px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-card:hover {
+      transform: scale(1.02);
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.45);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 30px;
+      color: white;
+    }
+
+    .overlay h2 {
+      font-size: 1.8em;
+      margin: 0;
+    }
+
+    .arrow {
+      font-size: 2em;
+      font-weight: bold;
+    }
+
+    .back-button {
+      margin-top: 30px;
+      padding: 10px 20px;
+      font-size: 1em;
+      background-color: maroon;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .back-button:hover {
+      background-color: #800000;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 class="fade-title">Choose a Gallery to View</h1>
+
+  <div class="gallery-container">
+
+    <div class="gallery-card" style="background-image: url('images/JeenaCover.jpg');" onclick="location.href='testGal1.html'">
+      <div class="overlay">
+        <h2>TestGAl1</h2>
+        <div class="arrow">→</div>
+      </div>
+    </div>
+
+    <div class="gallery-card" style="background-image: url('images/SATphoto.jpg');" onclick="location.href='iktara.html'">
+      <div class="overlay">
+        <h2>TestGal2</h2>
+        <div class="arrow">→</div>
+      </div>
+    </div>
+
+    <div class="gallery-card" style="background-image: url('images/AGTphoto.jpg');" onclick="location.href='agt.html'">
+      <div class="overlay">
+        <h2>TestGal3</h2>
+        <div class="arrow">→</div>
+      </div>
+    </div>
+
+  </div>
+
+  <button class="back-button" onclick="window.location.href='index.html'">← Back to Home</button>
+
+</body>
+</html>

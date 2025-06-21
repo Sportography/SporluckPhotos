@@ -95,6 +95,7 @@ document.getElementById("codeAccessForm").addEventListener("submit", function (e
     test123: "testGallery.html",
     gdhelpme: "driveHelper.html",
     newpage: "newPageTemp.html",
+    gandle: "galDirect.html",
     // Add more codes here
   };
 
