@@ -12,7 +12,6 @@
       opacity: 0;
       animation: fadeIn 1.5s ease forwards;
       animation-delay: 0.2s;
-      text-align: center;
       border: 2px solid white;
       padding: 20px;
       display: inline-block;
@@ -57,7 +56,6 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      color: white;
     }
 
     .overlay h2 {
@@ -70,12 +68,6 @@
       color: white;
     }
 
-    .arrow {
-      font-size: 2em;
-      font-weight: bold;
-      margin-left: 20px;
-    }
-
     .back-button {
       margin-top: 30px;
       padding: 10px 20px;
@@ -85,6 +77,9 @@
       border: none;
       border-radius: 8px;
       cursor: pointer;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .back-button:hover {
@@ -118,11 +113,16 @@
 </head>
 
 <body class="gallery-direct-page">
-  <!-- Editable background image -->
+
+  <!-- Background Image (fade layer) -->
   <div class="background-image" style="background-image: url('images/ringMonument.jpg');"></div>
 
-  <h1 class="fade-title">Choose a Gallery to View</h1>
+  <!-- Centered Title -->
+  <div style="text-align: center;">
+    <h1 class="fade-title">Choose a Gallery to View</h1>
+  </div>
 
+  <!-- Gallery Cards -->
   <div class="gallery-container">
 
     <div class="gallery-card" style="background-image: url('images/JeenaCover.jpg');" onclick="location.href='testGal1.html'">
@@ -145,6 +145,8 @@
 
   </div>
 
+  <!-- Centered Back Button -->
   <button class="back-button" onclick="window.location.href='index.html'">← Back to Home</button>
+
 </body>
 </html>
