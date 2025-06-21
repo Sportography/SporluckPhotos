@@ -617,7 +617,6 @@ button:hover {
   }
 }
 
-
 /* GALLERY BOXES */
 .gallery-box {
   background-color: #3a0000;
@@ -646,6 +645,7 @@ button:hover {
   color: #ffb6c1; /* Maroon/pink caption */
   font-weight: bold;
 }
+
 .gallery-direct-page .background-image {
   position: fixed;
   top: 0;
@@ -656,5 +656,5 @@ button:hover {
   background-position: center;
   opacity: 0.15;
   z-index: -1;
-  border: 2px solid red;
+  background-image: url('images/ringMonument.jpg');
 }
