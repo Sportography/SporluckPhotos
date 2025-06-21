@@ -6,53 +6,46 @@
   <title>Choose a Gallery</title>
   <link rel="stylesheet" href="styles.css" />
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Georgia', serif;
-      background-color: #1a0000;
-      color: white;
-      text-align: center;
-    }
-
     .fade-title {
-      font-size: 2em;
-      margin-top: 50px;
+      font-size: 2.8em;
+      margin-top: 100px;
       opacity: 0;
-      animation: fadeIn 2s ease forwards;
-    }
-
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-      }
+      animation: fadeIn 1.5s ease forwards;
+      animation-delay: 0.2s;
+      text-align: center;
+      border: 2px solid white;
+      padding: 20px;
+      display: inline-block;
     }
 
     .gallery-container {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 30px;
+      gap: 50px;
       margin: 60px auto;
       max-width: 90%;
+      position: relative;
+      z-index: 1;
     }
 
     .gallery-card {
       position: relative;
-      width: 90%;
-      max-width: 700px;
-      height: 200px;
+      width: 95%;
+      max-width: 1200px;
+      height: 400px;
       background-size: cover;
       background-position: center;
       border-radius: 12px;
       overflow: hidden;
       cursor: pointer;
-      transition: transform 0.3s ease;
+      opacity: 0;
+      animation: fadeInCard 1s ease forwards;
     }
 
-    .gallery-card:hover {
-      transform: scale(1.02);
-    }
+    .gallery-card:nth-of-type(1) { animation-delay: 1s; }
+    .gallery-card:nth-of-type(2) { animation-delay: 1.7s; }
+    .gallery-card:nth-of-type(3) { animation-delay: 2.4s; }
 
     .overlay {
       position: absolute;
@@ -63,19 +56,24 @@
       background: rgba(0, 0, 0, 0.45);
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      padding: 0 30px;
+      justify-content: center;
       color: white;
     }
 
     .overlay h2 {
-      font-size: 1.8em;
+      font-size: 2.4em;
       margin: 0;
+      text-align: center;
+      border: 2px solid white;
+      padding: 10px 20px;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: white;
     }
 
     .arrow {
       font-size: 2em;
       font-weight: bold;
+      margin-left: 20px;
     }
 
     .back-button {
@@ -92,9 +90,36 @@
     .back-button:hover {
       background-color: #800000;
     }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeInCard {
+      0% { opacity: 0; transform: translateY(40px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      .gallery-card {
+        height: 250px;
+      }
+      .overlay h2 {
+        font-size: 1.5em;
+        padding: 8px 16px;
+      }
+      .fade-title {
+        font-size: 2em;
+      }
+    }
   </style>
 </head>
-<body>
+
+<body class="gallery-direct-page">
+  <!-- Editable background image -->
+  <div class="background-image" style="background-image: url('images/ringMonument.jpg');"></div>
 
   <h1 class="fade-title">Choose a Gallery to View</h1>
 
@@ -102,28 +127,24 @@
 
     <div class="gallery-card" style="background-image: url('images/JeenaCover.jpg');" onclick="location.href='testGal1.html'">
       <div class="overlay">
-        <h2>TestGAl1</h2>
-        <div class="arrow">→</div>
+        <h2>TestGal1</h2>
       </div>
     </div>
 
-    <div class="gallery-card" style="background-image: url('images/SATphoto.jpg');" onclick="location.href='TestGal2.html'">
+    <div class="gallery-card" style="background-image: url('images/SATphoto.jpg');" onclick="location.href='testGal2.html'">
       <div class="overlay">
         <h2>TestGal2</h2>
-        <div class="arrow">→</div>
       </div>
     </div>
 
-    <div class="gallery-card" style="background-image: url('images/AGTphoto.jpg');" onclick="location.href='TestGal3.html'">
+    <div class="gallery-card" style="background-image: url('images/AGTphoto.jpg');" onclick="location.href='testGal3.html'">
       <div class="overlay">
         <h2>TestGal3</h2>
-        <div class="arrow">→</div>
       </div>
     </div>
 
   </div>
 
   <button class="back-button" onclick="window.location.href='index.html'">← Back to Home</button>
-
 </body>
 </html>
