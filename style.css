@@ -656,4 +656,5 @@ button:hover {
   background-position: center;
   opacity: 0.15;
   z-index: -1;
+  border: 2px solid red;
 }
