@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>testGal3</title>
+  <link rel="icon" href="images/Logo.png" />
+  <style>
+    body {
+      background-color: #2e0000;
+      color: white;
+      font-family: 'Georgia', serif;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    header.hero {
+      background-image: url('images/IMG_0824-Enhanced-NR.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      color: white;
+      margin: 0;
+      animation: fadeInUp 1.2s ease-out forwards;
+    }
+
+    .highlight {
+      color: #ffc0cb;
+      font-weight: bold;
+    }
+
+    .gallery-title {
+      font-size: 1.6rem;
+      color: white;
+      border: 2px solid white;
+      display: inline-block;
+      padding: 10px 20px;
+      margin-top: 20px;
+      font-weight: bold;
+      animation: fadeInUp 1.2s ease-out forwards;
+    }
+
+    .scroll-reminder {
+      font-size: 1.2rem;
+      margin-top: 40px;
+      opacity: 0;
+      animation: fadeIn 1s ease 1.2s forwards;
+    }
+
+    .scroll-arrow {
+      margin-top: 15px;
+      width: 50px;
+      height: 50px;
+      background: white;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: transform 0.3s;
+    }
+
+    .scroll-arrow:hover {
+      transform: scale(1.1);
+    }
+
+    .scroll-arrow span {
+      font-size: 2rem;
+      color: rgb(128, 0, 0);
+    }
+
+    main#photos {
+      padding: 60px 5vw;
+      display: flex;
+      gap: 40px;
+      justify-content: center;
+      align-items: flex-start;
+      max-width: 1600px;
+      margin: 0 auto;
+    }
+
+    .gallery-column {
+      flex: 0 0 45%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 45%;
+    }
+
+    .gallery-box {
+      background-color: #424242;
+      padding: 15px;
+      margin-bottom: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-box:hover {
+      transform: scale(1.02);
+    }
+
+    .gallery-box img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .gallery-box p {
+      margin: 0;
+      font-size: 1.1rem;
+      color: #ffb6c1;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .back-button {
+      text-align: center;
+      margin: 60px 0;
+    }
+
+    .back-button a {
+      background-color: #800000;
+      color: white;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .back-button a:hover {
+      background-color: #a00000;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    @media (max-width: 768px) {
+      main#photos {
+        flex-direction: column;
+        align-items: center;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .gallery-column {
+        flex: 0 0 100%;
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+        margin: 0;
+      }
+
+      .gallery-box {
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header class="hero">
+  <h1>Welcome to <span class="highlight">YOUR GALLERY</span></h1>
+  <div class="gallery-title">TEST GAL 3</div>
+  <div class="scroll-reminder">
+    See your photos below
+    <br />
+    <a href="#photos" class="scroll-arrow"><span>↓</span></a>
+  </div>
+</header>
+
+<main id="photos">
+  <div class="gallery-column">
+  <div class="gallery-box">
+    <img src="https://lh3.googleusercontent.com/d/1FQMkVH5xeNtlF52HqFJG1HytytK5Gbbl=w1000" alt="Gallery Image" />
+    <p>Your Caption</p>
+  </div>
+  <div class="gallery-box">
+    <img src="https://lh3.googleusercontent.com/d/179AGUw5J1skGrbSX2Yl8ZofikSYzm8NA=w1000" alt="Gallery Image" />
+    <p>Your Caption</p>
+  </div>
+  <div class="gallery-box">
+    <img src="https://lh3.googleusercontent.com/d/1ytxivHEL2jf9MhxHr_uvHtHOMdxB3nzk=w1000" alt="Gallery Image" />
+    <p>Your Caption</p>
+  </div>
+  <div class="gallery-box">
+    <img src="https://lh3.googleusercontent.com/d/1chxdwMsfCB1oHWuEjaBMPeDGEJQ9dWYX=w1000" alt="Gallery Image" />
+    <p>Your Caption</p>
+  </div>
+  <div class="gallery-box">
+    <img src="https://lh3.googleusercontent.com/d/12G81eBKrNODz9pAI7ddmfN7IyyiTFTZf=w1000" alt="Gallery Image" />
+    <p>Your Caption</p>
+  </div>
+  </div>
+
+  <div class="gallery-column">
+  <div class="gallery-box">
+    <img src="https://lh3.googleusercontent.com/d/1tYPOH7MGWMDLDDx_0f_O8hEOGkuBi9tB=w1000" alt="Gallery Image" />
+    <p>Your Caption</p>
+  </div>
+  <div class="gallery-box">
+    <img src="https://lh3.googleusercontent.com/d/1nAVI1WIH_0cegxC-XN7DUNX5K5NA__Wz=w1000" alt="Gallery Image" />
+    <p>Your Caption</p>
+  </div>
+  <div class="gallery-box">
+    <img src="https://lh3.googleusercontent.com/d/1w3x8vXV9JsqKv2wSMtHzziU3qQAjy2vo=w1000" alt="Gallery Image" />
+    <p>Your Caption</p>
+  </div>
+  <div class="gallery-box">
+    <img src="https://lh3.googleusercontent.com/d/1jwT-Ad-71Qt6m_UhCiDd2NKo05Q3aEv8=w1000" alt="Gallery Image" />
+    <p>Your Caption</p>
+  </div>
+  <div class="gallery-box">
+    <img src="https://lh3.googleusercontent.com/d/1b86MBbVd0TJsJrbSQNa6HneOUlXJq3R1=w1000" alt="Gallery Image" />
+    <p>Your Caption</p>
+  </div>
+  </div>
+
+  <div class="gallery-column">
+  <div class="gallery-box">
+    <img src="https://lh3.googleusercontent.com/d/1ysyscYy1wZ6UICETx13wT8gSpYQOSWJt=w1000" alt="Gallery Image" />
+    <p>Your Caption</p>
+  </div>
+  <div class="gallery-box">
+    <img src="https://lh3.googleusercontent.com/d/1ikcXq8Q4bWOGieYxhkkzprJbL5mrk9o5=w1000" alt="Gallery Image" />
+    <p>Your Caption</p>
+  </div>
+  <div class="gallery-box">
+    <img src="https://lh3.googleusercontent.com/d/1TAgsVuMwtSt5YolOp2glWcQaYN0y0KXS=w1000" alt="Gallery Image" />
+    <p>Your Caption</p>
+  </div>
+  <div class="gallery-box">
+    <img src="https://lh3.googleusercontent.com/d/1p6aCWFzp7zFrRPWOTNy_dQAgWpvQq3je=w1000" alt="Gallery Image" />
+    <p>Your Caption</p>
+  </div>
+  </div>
+
+  <div class="gallery-column">
+  <div class="gallery-box">
+    <img src="https://lh3.googleusercontent.com/d/1oRq8sHSKlLnLMDkrbagux--uM-3RwCA_=w1000" alt="Gallery Image" />
+    <p>Your Caption</p>
+  </div>
+  <div class="gallery-box">
+    <img src="https://lh3.googleusercontent.com/d/1DKOMwY47aw87AcFPnZn6epYr7HD1IVOE=w1000" alt="Gallery Image" />
+    <p>Your Caption</p>
+  </div>
+  <div class="gallery-box">
+    <img src="https://lh3.googleusercontent.com/d/1o5PCmPP2VFJ4qEflr70uHMzIpqJ7sVKC=w1000" alt="Gallery Image" />
+    <p>Your Caption</p>
+  </div>
+  <div class="gallery-box">
+    <img src="https://lh3.googleusercontent.com/d/1Xd4-eMHhMdLQwxLyTn9cWu1ScKWC-eAz=w1000" alt="Gallery Image" />
+    <p>Your Caption</p>
+  </div>
+  </div>
+
+</main>
+
+<div class="back-button">
+  <a href="index.html">← Back to Home</a>
+</div>
+
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
