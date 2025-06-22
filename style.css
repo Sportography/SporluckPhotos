@@ -612,14 +612,14 @@ button:hover {
 
 @media (min-width: 1200px) {
   .gallery-column.four-col {
-    flex: 1 1 calc(25% - 30px);
-    max-width: calc(25% - 30px);
+    flex: 1 1 calc(25% - 15px);
+    max-width: calc(25% - 15px);
   }
-}
-@media (min-width: 1200px) {
+
   .gallery-column.four-col .gallery-box img {
-    transform: scale(0.9);
+    transform: scale(0.92);
     transform-origin: center;
+    transition: transform 0.3s ease;
   }
 }
 
