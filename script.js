@@ -96,6 +96,7 @@ document.getElementById("codeAccessForm").addEventListener("submit", function (e
     gdhelpme: "driveHelper.html",
     newpage: "newPageTemp.html",
     gandle: "galDirect.html",
+    Sanju: "schmukum.html", 
     // Add more codes here
   };
 
