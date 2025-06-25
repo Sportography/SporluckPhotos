@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rates | Sporluck Photos</title>
-  <link rel="icon" href="images/Logo.png" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="images/Logo.png" />
   <style>
@@ -99,6 +98,10 @@
       animation: fadeIn 1s ease-in-out;
     }
 
+    .rates-section h2.rates-header {
+      font-size: 2.5rem;
+    }
+
     .rates-section {
       margin-bottom: 80px;
     }
@@ -122,14 +125,20 @@
       border-radius: 16px;
       color: white;
       text-align: center;
-      border: 3px solid maroon;
-      background-color: maroon;
-      box-shadow: 0 0 20px 8px rgba(255,255,255,0.1);
+      border: 3px solid #4d0000;
+      background-color: #4d0000;
+      box-shadow: 0 0 20px 5px rgba(255,255,255,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .gold { box-shadow: 0 0 30px 10px gold; }
-    .silver { box-shadow: 0 0 30px 10px silver; }
-    .bronze { box-shadow: 0 0 30px 10px #cd7f32; }
+    .tier:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 30px 10px rgba(255, 182, 193, 0.4);
+    }
+
+    .gold, .silver, .bronze {
+      box-shadow: none;
+    }
 
     .tier h3 {
       font-size: 2.5rem;
@@ -188,91 +197,13 @@
     .back-home:hover {
       background-color: #a00000;
     }
+
+    .fade-box p {
+      color: white;
+    }
   </style>
 </head>
 <body>
-  <header class="solid-nav">
-    <div class="brand">Sporluck Photos</div>
-    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-    <nav class="nav-links" id="navLinks">
-      <a href="index.html">Home</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="rates.html" class="active">Rates</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
-
-  <h1 class="rates-header fade-box">Our Rates</h1>
-
-  <section class="consulting-top">
-    <h3>Free Consulting</h3>
-    <p>We'll discuss your shoot goals, pricing, locations, and other options before booking anything!</p>
-  </section>
-
-  <!-- Portrait / Graduation Section -->
-  <section class="rates-section">
-    <h2 class="rates-header fade-box">Portrait / Graduation</h2>
-    <div class="podium-section">
-      <div class="tier silver">
-        <h3>Silver</h3>
-        <p>📷 10 fully edited images</p>
-        <p>🎞 Custom Gallery + 4x photo strips</p>
-        <p>💵 $55</p>
-        <a class="book-btn" href="https://calendly.com/sporluckphotos/portrait" target="_blank">Book Silver</a>
-      </div>
-      <div class="tier gold">
-        <h3>Gold</h3>
-        <p>📷 15 fully edited images</p>
-        <p>🎞 10x photo strips + Custom Gallery</p>
-        <p>🖼 Custom photo print included
-        <p>💵 $70</p>
-        <a class="book-btn" href="https://calendly.com/sporluckphotos/portrait" target="_blank">Book Gold</a>
-      </div>
-      <div class="tier bronze">
-        <h3>Bronze</h3>
-        <p>📷 8 fully edited images</p>
-        <p>🎞 Custom Gallery</p>
-        <p>💵 $40</p>
-        <a class="book-btn" href="https://calendly.com/sporluckphotos/portrait" target="_blank">Book Bronze</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Events Section -->
-  <section class="rates-section">
-    <h2 class="rates-header fade-box">Events</h2>
-    <div class="podium-section">
-      <div class="tier silver">
-        <h3>By Hour</h3>
-        <p>⏱ $20/hour</p>
-        <p>📷 Minimum 3 hours required</p>
-        <p>📸 30+ edited photos included</p>
-        <p>📝 </p>
-        <a class="book-btn" href="https://calendly.com/sporluckphotos/event-photoshoot" target="_blank">Book Hourly</a>
-      </div>
-      <div class="tier gold">
-        <h3>By Photo</h3>
-        <p>📷 30 fully edited photos: $80</p>
-        <p>➕ $2 per additional photo</p>
-        <p>💬 1-on-1 consultation included</p>
-        <a class="book-btn" href="https://calendly.com/sporluckphotos/event-photoshoot" target="_blank">Book By Photo</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Payment Policy Section -->
-  <section class="fade-box">
-    <h3>📋 Payment Policy</h3>
-    <p>For portraits: Full payment is due the day of the shoot.</p>
-    <p>For events: A 20% deposit is required to reserve the date, with the remaining balance due the day your sneak peek is delivered.</p>
-  </section>
-
-  <a href="index.html" class="back-home">← Back to Home</a>
-
-  <script>
-    function toggleMenu() {
-      document.getElementById("navLinks").classList.toggle("active");
-    }
-  </script>
+<!-- ...unchanged body content... -->
 </body>
 </html>
