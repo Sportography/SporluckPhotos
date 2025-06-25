@@ -15,12 +15,12 @@
     }
 
     .solid-nav {
-      background-color: #2e0000;
+      background-color: #800000;
       color: white;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 10px 20px;
+      padding: 15px 30px;
       position: sticky;
       top: 0;
       z-index: 1000;
@@ -36,7 +36,7 @@
       background: none;
       border: none;
       color: white;
-      font-size: 1.5rem;
+      font-size: 2rem;
     }
 
     .solid-nav .nav-links {
@@ -44,16 +44,19 @@
       gap: 20px;
     }
 
-    .solid-nav .nav-links a {
+    .solid-nav .nav-links a,
+    .solid-nav .nav-links .btn {
       color: white;
       text-decoration: none;
       font-weight: bold;
-      transition: color 0.3s;
+      padding: 8px 16px;
+      border-radius: 25px;
+      border: 2px solid white;
     }
 
     .solid-nav .nav-links a:hover,
     .solid-nav .nav-links a.active {
-      color: #ffb6c1;
+      background-color: #a00000;
     }
 
     @media (max-width: 768px) {
@@ -73,12 +76,26 @@
       }
     }
 
-    .rates-header {
+    .fade-box {
+      background-color: #3b0000;
+      border: 3px solid #ffc0cb;
+      padding: 20px;
+      margin: 40px auto;
+      max-width: 900px;
       text-align: center;
-      margin-top: 100px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .rates-header {
       font-size: 3.5rem;
       color: #ffc0cb;
       text-shadow: 0 0 15px black;
+      animation: fadeIn 1s ease-in-out;
     }
 
     .rates-section {
@@ -94,63 +111,24 @@
       margin: 40px auto;
       max-width: 1200px;
       padding: 0 20px;
+      animation: fadeIn 1s ease-in-out;
     }
 
     .tier {
       flex: 1;
+      min-width: 260px;
       padding: 25px;
       border-radius: 16px;
       color: white;
       text-align: center;
-      position: relative;
-      transition: transform 0.3s ease, opacity 0.8s ease;
       border: 3px solid maroon;
       background-color: maroon;
-      opacity: 0;
-      transform: translateY(30px);
-      animation: fadeUp 1s forwards;
+      box-shadow: 0 0 20px 8px rgba(255,255,255,0.1);
     }
 
-    .tier:nth-child(1) { animation-delay: 0.2s; }
-    .tier:nth-child(2) { animation-delay: 0.4s; }
-    .tier:nth-child(3) { animation-delay: 0.6s; }
-
-    @keyframes fadeUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .gold {
-      box-shadow: 0 0 30px 10px gold;
-      animation: glowGold 2s infinite alternate, fadeUp 1s forwards;
-    }
-
-    .silver {
-      box-shadow: 0 0 30px 10px silver;
-      animation: glowSilver 2s infinite alternate, fadeUp 1s forwards;
-    }
-
-    .bronze {
-      box-shadow: 0 0 30px 10px #cd7f32;
-      animation: glowBronze 2s infinite alternate, fadeUp 1s forwards;
-    }
-
-    @keyframes glowGold {
-      from { box-shadow: 0 0 10px 2px gold; }
-      to { box-shadow: 0 0 30px 10px gold; }
-    }
-
-    @keyframes glowSilver {
-      from { box-shadow: 0 0 10px 2px silver; }
-      to { box-shadow: 0 0 30px 10px silver; }
-    }
-
-    @keyframes glowBronze {
-      from { box-shadow: 0 0 10px 2px #cd7f32; }
-      to { box-shadow: 0 0 30px 10px #cd7f32; }
-    }
+    .gold { box-shadow: 0 0 30px 10px gold; }
+    .silver { box-shadow: 0 0 30px 10px silver; }
+    .bronze { box-shadow: 0 0 30px 10px #cd7f32; }
 
     .tier h3 {
       font-size: 2.5rem;
@@ -158,8 +136,8 @@
     }
 
     .tier p {
-      font-size: 1.25rem;
-      margin: 6px 0;
+      font-size: 1.3rem;
+      margin: 8px 0;
     }
 
     .book-btn {
@@ -181,20 +159,21 @@
     }
 
     .consulting-top {
-      margin: 40px auto 0;
       text-align: center;
       padding: 25px;
       border-radius: 12px;
       max-width: 600px;
+      margin: 40px auto 20px;
       background: #3b0000;
       color: #ffb6c1;
       border: 2px dashed #ffb6c1;
+      animation: fadeIn 1s ease-in-out;
     }
 
     .back-home {
       display: block;
       text-align: center;
-      margin: 40px auto 0;
+      margin: 60px auto;
       font-size: 1.2rem;
       text-decoration: none;
       color: white;
@@ -207,30 +186,6 @@
 
     .back-home:hover {
       background-color: #a00000;
-    }
-
-    @media (max-width: 768px) {
-      .podium-section {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .tier {
-        width: 90%;
-        margin-bottom: 30px;
-      }
-
-      .rates-header {
-        font-size: 2.5rem;
-      }
-
-      .tier h3 {
-        font-size: 2rem;
-      }
-
-      .tier p {
-        font-size: 1.1rem;
-      }
     }
   </style>
 </head>
@@ -246,18 +201,16 @@
     </nav>
   </header>
 
+  <h1 class="rates-header fade-box">Our Rates</h1>
+
   <section class="consulting-top">
     <h3>Free Consulting</h3>
     <p>We'll discuss your shoot goals, pricing, locations, and other options before booking anything!</p>
   </section>
 
-  <a href="index.html" class="back-home">← Back to Home</a>
-
-  <h1 class="rates-header">Our Rates</h1>
-
   <!-- Portrait / Graduation Section -->
   <section class="rates-section">
-    <h2 class="rates-header">Portrait / Graduation</h2>
+    <h2 class="rates-header fade-box">Portrait / Graduation</h2>
     <div class="podium-section">
       <div class="tier silver">
         <h3>Silver</h3>
@@ -286,32 +239,34 @@
 
   <!-- Events Section -->
   <section class="rates-section">
-    <h2 class="rates-header">Events</h2>
+    <h2 class="rates-header fade-box">Events</h2>
     <div class="podium-section">
       <div class="tier silver">
-        <h3>Silver</h3>
-        <p>📷 8 fully edited images</p>
-        <p>🤝 1-on-1 consultation</p>
-        <p>💵 $40</p>
-        <a class="book-btn" href="https://calendly.com/sporluckphotos/event-photoshoot" target="_blank">Book Silver</a>
+        <h3>By Hour</h3>
+        <p>⏱ $20/hour</p>
+        <p>📷 Minimum 3 hours</p>
+        <p>📸 30+ edited photos included</p>
+        <p>📝 Extra at photographer's discretion</p>
+        <a class="book-btn" href="https://calendly.com/sporluckphotos/event-photoshoot" target="_blank">Book Hourly</a>
       </div>
       <div class="tier gold">
-        <h3>Gold</h3>
-        <p>📷 10 fully edited images</p>
-        <p>🎞 Consultation + 4x photo strips</p>
-        <p>💵 $55</p>
-        <a class="book-btn" href="https://calendly.com/sporluckphotos/event-photoshoot" target="_blank">Book Gold</a>
-      </div>
-      <div class="tier bronze">
-        <h3>Bronze</h3>
-        <p>📷 15 fully edited images</p>
-        <p>🎞 10x photo strips + Consultation</p>
-        <p>🖼 6x4 framed print</p>
-        <p>💵 $70</p>
-        <a class="book-btn" href="https://calendly.com/sporluckphotos/event-photoshoot" target="_blank">Book Bronze</a>
+        <h3>By Photo</h3>
+        <p>📷 30 fully edited photos: $80</p>
+        <p>➕ $2 per additional photo</p>
+        <p>💬 1-on-1 consultation included</p>
+        <a class="book-btn" href="https://calendly.com/sporluckphotos/event-photoshoot" target="_blank">Book By Photo</a>
       </div>
     </div>
   </section>
+
+  <!-- Payment Policy Section -->
+  <section class="fade-box">
+    <h3>📋 Payment Policy</h3>
+    <p>For portraits: Full payment is due the day of the shoot.</p>
+    <p>For events: A 20% deposit is required to reserve the date, with the remaining balance due the day your sneak peek is delivered.</p>
+  </section>
+
+  <a href="index.html" class="back-home">← Back to Home</a>
 
   <script>
     function toggleMenu() {
