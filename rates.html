@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rates | Sporluck Photos</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="images/Logo.png" />
+  <style>
+    .rates-header {
+      text-align: center;
+      margin-top: 100px;
+      font-size: 3rem;
+      color: #ffc0cb;
+      text-shadow: 0 0 10px #000;
+    }
+
+    .rates-section {
+      margin-bottom: 80px;
+    }
+
+    .podium-section {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      gap: 30px;
+      margin: 40px auto;
+      max-width: 1200px;
+      padding: 0 20px;
+    }
+
+    .tier {
+      flex: 1;
+      padding: 20px;
+      border-radius: 12px;
+      color: white;
+      text-align: center;
+      position: relative;
+      transition: transform 0.3s ease;
+      border: 3px solid white;
+    }
+
+    .tier:hover {
+      transform: translateY(-10px);
+    }
+
+    .gold {
+      background: #ffd700;
+      box-shadow: 0 0 20px 5px gold;
+      animation: glowGold 2s infinite alternate;
+    }
+
+    .silver {
+      background: #c0c0c0;
+      box-shadow: 0 0 20px 5px silver;
+      transform: scale(0.9);
+      animation: glowSilver 2s infinite alternate;
+    }
+
+    .bronze {
+      background: #cd7f32;
+      box-shadow: 0 0 20px 5px #cd7f32;
+      transform: scale(0.9);
+      animation: glowBronze 2s infinite alternate;
+    }
+
+    @keyframes glowGold {
+      from { box-shadow: 0 0 10px 2px gold; }
+      to { box-shadow: 0 0 30px 10px gold; }
+    }
+
+    @keyframes glowSilver {
+      from { box-shadow: 0 0 10px 2px silver; }
+      to { box-shadow: 0 0 30px 10px silver; }
+    }
+
+    @keyframes glowBronze {
+      from { box-shadow: 0 0 10px 2px #cd7f32; }
+      to { box-shadow: 0 0 30px 10px #cd7f32; }
+    }
+
+    .tier h3 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    .tier p {
+      font-size: 1rem;
+      margin: 5px 0;
+    }
+
+    .book-btn {
+      margin-top: 15px;
+      background-color: #800000;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .book-btn:hover {
+      background-color: #a00000;
+    }
+
+    .consulting {
+      margin: 60px auto;
+      text-align: center;
+      padding: 30px;
+      border-radius: 12px;
+      max-width: 600px;
+      background: #3b0000;
+      color: #ffb6c1;
+      border: 2px dashed #ffb6c1;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation bar included from index.html -->
+  <header class="solid-nav">
+    <div class="brand">Sporluck Photos</div>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="rates.html" class="active">Rates</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <h1 class="rates-header">Our Rates</h1>
+
+  <section class="rates-section">
+    <h2 class="rates-header">Portrait / Graduation</h2>
+    <div class="podium-section">
+      <div class="tier silver">
+        <h3>Silver</h3>
+        <p>• 8 fully edited images</p>
+        <p>• 1-on-1 consultation</p>
+        <p><strong>$40</strong></p>
+        <a href="https://calendly.com/sporluckphotos/portrait" class="book-btn">Book Silver</a>
+      </div>
+      <div class="tier gold">
+        <h3>Gold</h3>
+        <p>• 10 fully edited images</p>
+        <p>• Consultation + 4x photo strips</p>
+        <p><strong>$55</strong></p>
+        <a href="https://calendly.com/sporluckphotos/portrait" class="book-btn">Book Gold</a>
+      </div>
+      <div class="tier bronze">
+        <h3>Bronze</h3>
+        <p>• 15 fully edited images</p>
+        <p>• Consultation + 10x photo strips</p>
+        <p>• 6x4 framed print</p>
+        <p><strong>$70</strong></p>
+        <a href="https://calendly.com/sporluckphotos/portrait" class="book-btn">Book Bronze</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="rates-section">
+    <h2 class="rates-header">Events</h2>
+    <div class="podium-section">
+      <div class="tier silver">
+        <h3>Silver</h3>
+        <p>• 8 fully edited images</p>
+        <p>• 1-on-1 consultation</p>
+        <p><strong>$40</strong></p>
+        <a href="https://calendly.com/sporluckphotos/event-photoshoot" class="book-btn">Book Silver</a>
+      </div>
+      <div class="tier gold">
+        <h3>Gold</h3>
+        <p>• 10 fully edited images</p>
+        <p>• Consultation + 4x photo strips</p>
+        <p><strong>$55</strong></p>
+        <a href="https://calendly.com/sporluckphotos/event-photoshoot" class="book-btn">Book Gold</a>
+      </div>
+      <div class="tier bronze">
+        <h3>Bronze</h3>
+        <p>• 15 fully edited images</p>
+        <p>• Consultation + 10x photo strips</p>
+        <p>• 6x4 framed print</p>
+        <p><strong>$70</strong></p>
+        <a href="https://calendly.com/sporluckphotos/event-photoshoot" class="book-btn">Book Bronze</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="consulting">
+    <h3>Free Consulting</h3>
+    <p>We'll discuss your shoot goals, pricing, locations, and other options before booking anything!</p>
+  </section>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("active");
+    }
+  </script>
+</body>
+</html>
