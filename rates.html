@@ -141,12 +141,12 @@
     }
 
     .tier h3 {
-      font-size: 2.5rem;
+      font-size: 2.2rem;
       margin-bottom: 15px;
     }
 
     .tier p {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       margin: 8px 0;
     }
 
@@ -174,8 +174,8 @@
       border-radius: 12px;
       max-width: 600px;
       margin: 40px auto 20px;
-      background: #3b0000;
-      color: #ffb6c1;
+      background: #fffdd0; /* Cream background */
+      color: #800000;       /* Maroon text */
       border: 2px dashed #ffb6c1;
       animation: fadeIn 1s ease-in-out;
     }
@@ -198,8 +198,54 @@
       background-color: #a00000;
     }
 
-    .fade-box p {
+    .fade-box p,
+    .fade-box h3 {
       color: white;
+    }
+
+    @media (max-width: 768px) {
+      .rates-header {
+        font-size: 2.2rem;
+      }
+
+      .tier h3 {
+        font-size: 1.8rem;
+      }
+
+      .tier p {
+        font-size: 1.05rem;
+      }
+
+      .book-btn {
+        font-size: 1rem;
+        padding: 10px 20px;
+      }
+
+      .podium-section {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .tier {
+        min-width: unset;
+        width: 100%;
+      }
+
+      .consulting-top {
+        padding: 20px;
+        font-size: 0.95rem;
+      }
+
+      .fade-box {
+        margin: 20px 10px;
+        padding: 15px;
+      }
+
+      .back-home {
+        margin: 40px auto;
+        font-size: 1rem;
+        padding: 10px 20px;
+      }
     }
   </style>
 </head>
@@ -237,7 +283,7 @@
         <h3>Gold</h3>
         <p>📷 15 fully edited images</p>
         <p>🎞 10x photo strips + Custom Gallery</p>
-        <p>🖼 Custom photo print included
+        <p>🖼 Custom photo print included</p>
         <p>💵 $70</p>
         <a class="book-btn" href="https://calendly.com/sporluckphotos/portrait" target="_blank">Book Gold</a>
       </div>
@@ -260,7 +306,6 @@
         <p>⏱ $20/hour</p>
         <p>📷 Minimum 3 hours required</p>
         <p>📸 30+ edited photos included</p>
-        <p>📝 </p>
         <a class="book-btn" href="https://calendly.com/sporluckphotos/event-photoshoot" target="_blank">Book Hourly</a>
       </div>
       <div class="tier gold">
