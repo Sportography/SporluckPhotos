@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
 const track = document.getElementById("gallery-track");
 const items = track.querySelectorAll(".gallery-item");
 const itemWidth = items[0].offsetWidth + 20;
-let currentIndex = 3; // Start after the cloned beginning
+let currentIndex = 3; // Start after the cloned beginning (come back to this seems buggy: Images aren't centered when reaching the end of loop)
 
 track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
 
@@ -88,7 +88,7 @@ document.getElementById("codeAccessForm").addEventListener("submit", function (e
   e.preventDefault();
   const code = document.getElementById("accessCode").value.trim().toLowerCase();
 
-  // Mapping codes to folder IDs or URLs
+  // Mapping codes to folder IDs or URLs (Passwords to galleries: don't add comma on last one)
   const galleryCodes = {
     jeena25: "jeena25.html",
     alexg: "alexg.html",
@@ -103,6 +103,6 @@ document.getElementById("codeAccessForm").addEventListener("submit", function (e
   if (galleryCodes[code]) {
     window.location.href = galleryCodes[code];
   } else {
-    document.getElementById("code-error").textContent = "❌ No gallery found for that code.";
+    document.getElementById("code-error").textContent = "❌ No gallery found for that code."; //Need to work on this: even when correct code entered no gallery found pops up
   }
 });
