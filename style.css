@@ -606,7 +606,7 @@ button:hover {
 
 @media (min-width: 900px) {
   .gallery-column.three-col {
-    max-width: 33.33%;
+    max-width: 25%;
   }
 }
 
